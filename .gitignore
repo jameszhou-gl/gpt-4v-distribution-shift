@@ -3,3 +3,4 @@ photo
 sketch
 output.*.txt
 *.pyc
+exp_output/2023-*
