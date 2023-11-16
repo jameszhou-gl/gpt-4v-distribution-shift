@@ -1,4 +1,5 @@
 import os
+import re
 import base64
 import argparse
 import requests
@@ -44,7 +45,7 @@ def get_gpt_response(image_path, prompt, api_key=None):
                 ]
             }
         ],
-        "max_tokens": 300
+        "max_tokens": 500
     }
 
     response = requests.post(
@@ -123,7 +124,10 @@ def main(args):
                 answer_str = response['choices'][0]['message']['content']
                 pred_class_name = None
                 for class_name in dataset.class_names:
-                    if f'Answer Choice: {class_name}' in answer_str:
+                    pattern = re.compile(
+                        f'Answer Choice: {class_name}', re.IGNORECASE)
+                    if pattern.search(answer_str):
+                        # if f'Answer Choice: {class_name}' in answer_str:
                         pred_class_name = class_name
                         break
                 if not pred_class_name:
@@ -149,7 +153,7 @@ if __name__ == '__main__':
                         default="/l/users/guanglin.zhou/gpt-4v-distribution-shift")
     parser.add_argument('--dataset', type=str, default="PACS")
     parser.add_argument('--output_dir', type=str, default="./exp_output")
-    parser.add_argument('--holdout_fraction', type=float, default=0.02)
+    parser.add_argument('--holdout_fraction', type=float, default=0.01)
     parser.add_argument('--trial_seed', type=int, default=0,
                         help='Trial number (used for seeding split_dataset and '
                         'random_hparams).')
