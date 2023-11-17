@@ -1,0 +1,152 @@
+{
+    "dataset": "VLCS",
+    "class_names": [
+        "bird",
+        "car",
+        "chair",
+        "dog",
+        "person"
+    ],
+    "samples": {
+        "1": {
+            "domain": "Caltech101",
+            "class": "bird",
+            "image": "Caltech101/bird/8762944a53a74484bd03b4dbba84dcae.jpg",
+            "class_id": "0",
+            "subject": "nature"
+        },
+        "2": {
+            "domain": "Caltech101",
+            "class": "car",
+            "image": "Caltech101/car/d9127e725954454b9494d52f6006bf68.jpg",
+            "class_id": "1",
+            "subject": "nature"
+        },
+        "3": {
+            "domain": "Caltech101",
+            "class": "chair",
+            "image": "Caltech101/chair/7eec18e3715a43d79120dafa975b7cc3.jpg",
+            "class_id": "2",
+            "subject": "nature"
+        },
+        "4": {
+            "domain": "Caltech101",
+            "class": "dog",
+            "image": "Caltech101/dog/7b1ba1b79ba643de898d34b6d0fe8082.jpg",
+            "class_id": "3",
+            "subject": "nature"
+        },
+        "5": {
+            "domain": "Caltech101",
+            "class": "person",
+            "image": "Caltech101/person/1c37967169d54fecbc4b1fa6b6eac464.jpg",
+            "class_id": "4",
+            "subject": "nature"
+        },
+        "6": {
+            "domain": "LabelMe",
+            "class": "bird",
+            "image": "LabelMe/bird/4f0383ce876441329301483f781a62e2.jpg",
+            "class_id": "0",
+            "subject": "nature"
+        },
+        "7": {
+            "domain": "LabelMe",
+            "class": "car",
+            "image": "LabelMe/car/0ff5d6b2dc614a91811de5b4df410cc5.jpg",
+            "class_id": "1",
+            "subject": "nature"
+        },
+        "8": {
+            "domain": "LabelMe",
+            "class": "chair",
+            "image": "LabelMe/chair/1a42f16a6ed94b518df8adba26e31f14.jpg",
+            "class_id": "2",
+            "subject": "nature"
+        },
+        "9": {
+            "domain": "LabelMe",
+            "class": "dog",
+            "image": "LabelMe/dog/e5fd67c015e04719b5b84257fd87d851.jpg",
+            "class_id": "3",
+            "subject": "nature"
+        },
+        "10": {
+            "domain": "LabelMe",
+            "class": "person",
+            "image": "LabelMe/person/fabc9d5fedd94f4c93df359d6451fb55.jpg",
+            "class_id": "4",
+            "subject": "nature"
+        },
+        "11": {
+            "domain": "SUN09",
+            "class": "bird",
+            "image": "SUN09/bird/45d0d2a45e804dcdb694966d662d9e59.jpg",
+            "class_id": "0",
+            "subject": "nature"
+        },
+        "12": {
+            "domain": "SUN09",
+            "class": "car",
+            "image": "SUN09/car/7b332fafb4de4b0e8a1fb1c72c56861c.jpg",
+            "class_id": "1",
+            "subject": "nature"
+        },
+        "13": {
+            "domain": "SUN09",
+            "class": "chair",
+            "image": "SUN09/chair/5503258662554d6d97d57cef68c9b8ec.jpg",
+            "class_id": "2",
+            "subject": "nature"
+        },
+        "14": {
+            "domain": "SUN09",
+            "class": "dog",
+            "image": "SUN09/dog/8bc1fd8de52a401b8d53d8da2740274b.jpg",
+            "class_id": "3",
+            "subject": "nature"
+        },
+        "15": {
+            "domain": "SUN09",
+            "class": "person",
+            "image": "SUN09/person/84e26f46ad08456fbc37c38ef403719f.jpg",
+            "class_id": "4",
+            "subject": "nature"
+        },
+        "16": {
+            "domain": "VOC2007",
+            "class": "bird",
+            "image": "VOC2007/bird/e147b2986ab247dd9547834384b14016.jpg",
+            "class_id": "0",
+            "subject": "nature"
+        },
+        "17": {
+            "domain": "VOC2007",
+            "class": "car",
+            "image": "VOC2007/car/7717e2bc25ab4db0b38bdf7d30042715.jpg",
+            "class_id": "1",
+            "subject": "nature"
+        },
+        "18": {
+            "domain": "VOC2007",
+            "class": "chair",
+            "image": "VOC2007/chair/67c1c4201c9c4bfab375b60f5cb51001.jpg",
+            "class_id": "2",
+            "subject": "nature"
+        },
+        "19": {
+            "domain": "VOC2007",
+            "class": "dog",
+            "image": "VOC2007/dog/4da398dbdd9648b5b6590cf1d764873e.jpg",
+            "class_id": "3",
+            "subject": "nature"
+        },
+        "20": {
+            "domain": "VOC2007",
+            "class": "person",
+            "image": "VOC2007/person/f4149a5a2f2d4f2abc25b068b9861b55.jpg",
+            "class_id": "4",
+            "subject": "nature"
+        }
+    }
+}
