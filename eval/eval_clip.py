@@ -30,7 +30,7 @@ def main(args):
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model.to(device)
     for each_dataset in args.dataset:
-        gen_sample_json(dataset=each_dataset, num_sample=20,
+        gen_sample_json(dataset=each_dataset, num_sample=args.num_sample,
                         data_dir=args.data_dir, output_dir=args.output_dir)
         # Load the JSON file
         with open(f'{args.output_dir}/samples_in_{each_dataset}.json', 'r') as f:
@@ -81,6 +81,8 @@ if __name__ == '__main__':
                         default="/home/guanglinzhou/scratch/gpt-4v-distribution-shift")
     parser.add_argument('--dataset', type=str, nargs='+', default=["PACS"])
     parser.add_argument('--output_dir', type=str, default="./exp_output")
+    parser.add_argument('--num_sample', type=int, default=20,
+                        help="the number of samples for each class")
     args = parser.parse_args()
 
     logger = setup(args)
