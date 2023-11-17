@@ -1,0 +1,8 @@
+2023-11-18 05:48:38,640 - Saving in ./exp_output/2023-11-18-05_48_38
+2023-11-18 05:48:38,641 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset=['PACS', 'VLCS'], output_dir='./exp_output/2023-11-18-05_48_38', num_sample=1, model_size='13b')
+2023-11-18 05:48:38,641 - sampling data examples in PACS, and writing into json file
+2023-11-18 05:48:38,660 - convert the unified sampling format, into the vqa format in LLaVA
+2023-11-18 05:48:38,663 - saving questions in llava vqa format
+2023-11-18 05:52:16,627 - sampling data examples in VLCS, and writing into json file
+2023-11-18 05:52:16,655 - convert the unified sampling format, into the vqa format in LLaVA
+2023-11-18 05:52:16,658 - saving questions in llava vqa format

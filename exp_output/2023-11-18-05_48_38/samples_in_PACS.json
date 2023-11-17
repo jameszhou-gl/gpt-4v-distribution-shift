@@ -1,0 +1,161 @@
+{
+    "dataset": "PACS",
+    "class_names": [
+        "dog",
+        "giraffe",
+        "horse",
+        "person",
+        "guitar",
+        "elephant",
+        "house"
+    ],
+    "samples": {
+        "1": {
+            "domain": "art_painting",
+            "class": "dog",
+            "image": "art_painting/dog/pic_304.jpg",
+            "class_id": "0",
+            "subject": "nature"
+        },
+        "2": {
+            "domain": "art_painting",
+            "class": "giraffe",
+            "image": "art_painting/giraffe/pic_193.jpg",
+            "class_id": "1",
+            "subject": "nature"
+        },
+        "3": {
+            "domain": "art_painting",
+            "class": "horse",
+            "image": "art_painting/horse/pic_115.jpg",
+            "class_id": "2",
+            "subject": "nature"
+        },
+        "4": {
+            "domain": "art_painting",
+            "class": "person",
+            "image": "art_painting/person/pic_003.jpg",
+            "class_id": "3",
+            "subject": "nature"
+        },
+        "5": {
+            "domain": "art_painting",
+            "class": "guitar",
+            "image": "art_painting/guitar/pic_034.jpg",
+            "class_id": "4",
+            "subject": "nature"
+        },
+        "6": {
+            "domain": "art_painting",
+            "class": "elephant",
+            "image": "art_painting/elephant/pic_250.jpg",
+            "class_id": "5",
+            "subject": "nature"
+        },
+        "7": {
+            "domain": "art_painting",
+            "class": "house",
+            "image": "art_painting/house/pic_047.jpg",
+            "class_id": "6",
+            "subject": "nature"
+        },
+        "8": {
+            "domain": "cartoon",
+            "class": "dog",
+            "image": "cartoon/dog/pic_192.jpg",
+            "class_id": "0",
+            "subject": "nature"
+        },
+        "9": {
+            "domain": "cartoon",
+            "class": "giraffe",
+            "image": "cartoon/giraffe/pic_321.jpg",
+            "class_id": "1",
+            "subject": "nature"
+        },
+        "10": {
+            "domain": "cartoon",
+            "class": "horse",
+            "image": "cartoon/horse/pic_352.jpg",
+            "class_id": "2",
+            "subject": "nature"
+        },
+        "11": {
+            "domain": "cartoon",
+            "class": "person",
+            "image": "cartoon/person/pic_341.jpg",
+            "class_id": "3",
+            "subject": "nature"
+        },
+        "12": {
+            "domain": "cartoon",
+            "class": "guitar",
+            "image": "cartoon/guitar/pic_017.jpg",
+            "class_id": "4",
+            "subject": "nature"
+        },
+        "13": {
+            "domain": "cartoon",
+            "class": "elephant",
+            "image": "cartoon/elephant/pic_334.jpg",
+            "class_id": "5",
+            "subject": "nature"
+        },
+        "14": {
+            "domain": "cartoon",
+            "class": "house",
+            "image": "cartoon/house/pic_119.jpg",
+            "class_id": "6",
+            "subject": "nature"
+        },
+        "15": {
+            "domain": "photo",
+            "class": "dog",
+            "image": "photo/dog/056_0016.jpg",
+            "class_id": "0",
+            "subject": "nature"
+        },
+        "16": {
+            "domain": "photo",
+            "class": "giraffe",
+            "image": "photo/giraffe/n02439033_13384.jpg",
+            "class_id": "1",
+            "subject": "nature"
+        },
+        "17": {
+            "domain": "photo",
+            "class": "horse",
+            "image": "photo/horse/n02374451_2743.jpg",
+            "class_id": "2",
+            "subject": "nature"
+        },
+        "18": {
+            "domain": "photo",
+            "class": "person",
+            "image": "photo/person/253_0135.jpg",
+            "class_id": "3",
+            "subject": "nature"
+        },
+        "19": {
+            "domain": "photo",
+            "class": "guitar",
+            "image": "photo/guitar/063_0051.jpg",
+            "class_id": "4",
+            "subject": "nature"
+        },
+        "20": {
+            "domain": "photo",
+            "class": "elephant",
+            "image": "photo/elephant/064_0099.jpg",
+            "class_id": "5",
+            "subject": "nature"
+        },
+        "21": {
+            "domain": "photo",
+            "class": "house",
+            "image": "photo/house/pic_021.jpg",
+            "class_id": "6",
+            "subject": "nature"
+        }
+    }
+}
