@@ -9,8 +9,8 @@ from datetime import datetime
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 
-import datasets
-import utils
+import data.datasets as datasets
+import eval.utils as utils
 
 
 def get_gpt_response(image_path, prompt, api_key=None):

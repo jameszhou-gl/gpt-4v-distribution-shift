@@ -3,4 +3,6 @@ photo
 sketch
 output.*.txt
 *.pyc
-exp_output/2023-*
+exp_output
+del_*.py
+gpt_4v_distribution_shift.egg-info

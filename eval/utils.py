@@ -1,4 +1,5 @@
 import torch
+import logging
 import hashlib
 import numpy as np
 
@@ -85,3 +86,26 @@ class InfiniteDataLoader:
 
     def __len__(self):
         raise ValueError
+
+
+def setup_logging(output_dir):
+    # Create a logger
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+
+    # Create a file handler and a console handler
+    file_handler = logging.FileHandler(f'{output_dir}/log.txt')
+    console_handler = logging.StreamHandler()
+
+    # Create a formatter and set it for both handlers
+    formatter = logging.Formatter(
+        '%(asctime)s - %(message)s')
+    file_handler.setFormatter(formatter)
+    console_handler.setFormatter(formatter)
+
+    # Add the handlers to the logger
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+    logger.info(f'Saving in {output_dir}')
+
+    return logger
