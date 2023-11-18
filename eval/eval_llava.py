@@ -1,10 +1,11 @@
 import subprocess
+import re
 import os
 import sys
 import json
 import shutil
 import argparse
-from utils import setup_logging
+from utils import setup_logging, analyse_unified_output
 from datetime import datetime
 from data.random_sampler import gen_sample_json
 
@@ -20,8 +21,8 @@ def setup(args):
     return logger
 
 
-def convert_samples_question_format_llava(dataset, data, args):
-    question_file = f'{args.output_dir}/llava_question_file_{dataset}.jsonl'
+def convert_unified_input_into_llava_vqa(dataset, data, args):
+    question_file = f'{args.output_dir}/unified_input_{dataset}_in_llava_vqa.jsonl'
     first_flag = True
     class_names = data['class_names']
     for item_id, item in data['samples'].items():
@@ -31,7 +32,7 @@ def convert_samples_question_format_llava(dataset, data, args):
         Please respond with the following format:
         ---BEGIN FORMAT TEMPLATE---
         Answer Choice: [Your Answer Choice Here]
-        Confidence Score: [Your Numerical Prediction Confidence Score Here]
+        Confidence Score: [Your Numerical Prediction Confidence Score Here From 0 To 1]
         Reasoning: [Your Reasoning Behind This Answer Here]
         ---END FORMAT TEMPLATE---
 
@@ -47,30 +48,92 @@ def convert_samples_question_format_llava(dataset, data, args):
     return question_file
 
 
+def search_pred_info(text_in_llava, class_names):
+    predicted_class = None
+    for class_name in class_names:
+        # Pattern to match 'Answer Choice: [class_name]' or 'Answer Choice: class_name' (case-insensitive)
+        pattern = re.compile(
+            r'Answer Choice: \[?' + re.escape(class_name) + r'\]?', re.IGNORECASE)
+        if pattern.search(text_in_llava):
+            predicted_class = class_name
+            break
+    if not predicted_class:
+        logger.info('query failed')
+    # Regular expression patterns to extract Confidence Score (0~1) and Reasoning
+    confidence_score_pattern = r'Confidence Score:\s*([0-9]*\.?[0-9]+)'
+    reasoning_pattern = r'Reasoning:\s*(.+)'
+
+    # Extract Confidence Score
+    confidence_score_match = re.search(
+        confidence_score_pattern, text_in_llava, re.DOTALL)
+    if confidence_score_match:
+        confidence_score = confidence_score_match.group(1).strip()
+    else:
+        confidence_score = None
+
+    # Extract Reasoning
+    reasoning_match = re.search(reasoning_pattern, text_in_llava, re.DOTALL)
+    if reasoning_match:
+        reasoning = reasoning_match.group(1).strip()
+    else:
+        reasoning = None
+    return predicted_class, confidence_score, reasoning
+
+
+def convert_llava_answer_into_unified_output(dataset, answer_file, unified_input):
+    with open(answer_file, 'r') as file:
+        class_names = unified_input['class_names']
+        for line in file:
+            answer_by_llava = json.loads(line)
+            item_id = answer_by_llava['question_id']
+            item = unified_input['samples'][item_id]
+            unified_output = {}
+            # Store unified output jsonl
+            unified_output['dataset'] = dataset
+            unified_output['domain'] = item['domain']
+            unified_output['subject'] = item['subject']
+            unified_output['true_class'] = item['class']
+            predicted_class, confidence_score, reasoning = search_pred_info(
+                answer_by_llava['text'], class_names)
+            unified_output['predicted_class'] = predicted_class
+            unified_output['image'] = item['image']
+            unified_output['id'] = item_id
+            unified_output['confidence_score'] = confidence_score
+            unified_output['reasoning'] = reasoning
+            with open(f'{args.output_dir}/unified_output.jsonl', 'a') as jsonl_file:
+                jsonl_file.write(json.dumps(unified_output) + '\n')
+
+
 def main(args):
     for each_dataset in args.dataset:
-        logger.info(
-            f'sampling data examples in {each_dataset}, and writing into json file')
         gen_sample_json(dataset=each_dataset, num_sample=args.num_sample,
                         data_dir=args.data_dir, output_dir=args.output_dir)
         # Load the JSON file
-        with open(f'{args.output_dir}/samples_in_{each_dataset}.json', 'r') as f:
+        with open(f'{args.output_dir}/unified_input_{each_dataset}.json', 'r') as f:
             data = json.load(f)
         logger.info(
-            'convert the unified sampling format, into the vqa format in LLaVA')
-        question_file = convert_samples_question_format_llava(
+            'convert the unified input format, into llava vqa format')
+        question_file = convert_unified_input_into_llava_vqa(
             each_dataset, data, args)
-        logger.info('saving questions in llava vqa format')
+        answer_file = f"{args.output_dir}/output_{each_dataset}_in_llava_vqa.jsonl"
         llava_model_vqa = [
             "python", "-m", "llava.eval.model_vqa",
             "--model-path", f"liuhaotian/llava-v1.5-{args.model_size}",
             "--question-file", question_file,
             "--image-folder", f"{args.data_dir}",
-            "--answers-file", f"{args.output_dir}/llava-v1.5-{args.model_size}_{each_dataset}_answer.jsonl",
+            "--answers-file", answer_file,
             "--temperature", "0",
             "--conv-mode", "vicuna_v1"
         ]
-        subprocess.run(llava_model_vqa)
+        # Run the subprocess and capture the output
+        result = subprocess.run(
+            llava_model_vqa, stdout=subprocess.PIPE, text=True)
+        # Log stdout
+        if result.stdout:
+            logger.info("LLaVA Output:\n" + result.stdout)
+        convert_llava_answer_into_unified_output(
+            dataset=each_dataset, answer_file=answer_file, unified_input=data)
+    analyse_unified_output(args)
 
 
 if __name__ == '__main__':
@@ -84,6 +147,7 @@ if __name__ == '__main__':
                         help="the number of samples for each class")
     parser.add_argument('--model_size', type=str,
                         choices=['7b', '13b'], default="13b")
+    # parser.add_argument('--continue', type=str, default="./exp_output")
     args = parser.parse_args()
 
     logger = setup(args)

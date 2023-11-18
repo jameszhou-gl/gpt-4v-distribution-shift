@@ -1,17 +1,26 @@
 import os
 import random
 import json
+import logging
 
 
 def gen_sample_json(dataset='PACS', num_sample=20, data_dir=None, output_dir=None):
+    logger = logging.getLogger('gpt-4v-distribution-shift-logger')
+    logger.info(
+        f'sampling data examples in {dataset}, and writing into unified_input_{dataset}.json')
     # Load the JSON file
     with open('./data/dataset_info.json', 'r') as f:
-        dataset_info = json.load(f)[dataset]
+        data = json.load(f)
+        if dataset not in data:
+            raise ValueError(
+                f"Dataset '{dataset}' not supported! Please update metadata for such dataset in dataset_info.json")
+        dataset_info = data[dataset]
     domains = dataset_info['domains']
     class_names = dataset_info['class_names']
     subject = dataset_info['subject']
-
-    selected_images_info = {'dataset': dataset,
+    logger.info('Processing {}: {} domains, {} classes'.format(
+        dataset, len(domains), len(class_names)))
+    selected_images_info = {'dataset': dataset, 'domains': domains,
                             'class_names': class_names, 'samples': {}}
 
     # Iterate through each domain and class
@@ -21,7 +30,7 @@ def gen_sample_json(dataset='PACS', num_sample=20, data_dir=None, output_dir=Non
             for class_id, class_name in enumerate(selected_images_info['class_names']):
                 class_path = os.path.join(domain_path, class_name)
                 images = [os.path.join(domain, class_name, img) for img in os.listdir(
-                    class_path) if img.endswith(".jpg")]
+                    class_path) if img.endswith((".jpg", ".png"))]
 
                 # Randomly sample num_sample images
                 if len(images) >= num_sample:
@@ -36,13 +45,9 @@ def gen_sample_json(dataset='PACS', num_sample=20, data_dir=None, output_dir=Non
                             "subject": subject
                         }
                 else:
-                    pass
-                    # print(
-                    #     f"Not enough images in {class_path} to sample {num_sample} images.")
+                    logger.info(
+                        f"Not enough images in {os.path.join(domain, class_name)} to sample {num_sample} images.")
 
     # Write selected images information to a JSON file
-    with open(f'{output_dir}/samples_in_{dataset}.json', 'w') as f:
+    with open(f'{output_dir}/unified_input_{dataset}.json', 'w') as f:
         json.dump(selected_images_info, f, indent=4)
-
-
-# gen_sample_json()
