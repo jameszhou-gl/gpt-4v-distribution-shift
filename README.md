@@ -164,3 +164,15 @@ CUDA_VISIBLE_DEVICES=0,1 python ./eval/eval_llava.py --dataset PACS --continue_d
 ```
 
 Replace `<path_to_clip_results>` with the directory path where the CLIP results are stored. This command continues the LLaVA evaluation using the CLIP model's results as a starting point, for a quick and fair comparion between two models.
+
+
+### Evaluating with gpt-4-vision-preview
+
+```bash
+export OPENAI_API_KEY="your-openai-api"
+python eval/eval_gpt-4v.py --num_sample 1
+```
+
+The outpur directory example can be find in the [repository](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/tree/master/exp_output/2023-11-18-22_50_14):
+
+![](https://p.ipic.vip/28l01k.png)
