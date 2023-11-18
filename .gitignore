@@ -6,3 +6,4 @@ del_*.py
 gpt_4v_distribution_shift.egg-info
 __pycache__
 !exp_output/2023-11-18-05_48_38/
+!exp_output/2023-11-18-21_08_16/

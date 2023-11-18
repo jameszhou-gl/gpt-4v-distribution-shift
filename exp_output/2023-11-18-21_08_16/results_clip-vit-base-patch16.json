@@ -1,0 +1,140 @@
+{
+    "overall_accuracy": 0.95,
+    "datasets": {
+        "VLCS": {
+            "total": 20,
+            "correct": 19,
+            "domains": {
+                "Caltech101": {
+                    "total": 5,
+                    "correct": 5,
+                    "classes": {
+                        "bird": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "car": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "chair": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "dog": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "person": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 1.0
+                },
+                "LabelMe": {
+                    "total": 5,
+                    "correct": 4,
+                    "classes": {
+                        "bird": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "car": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "chair": {
+                            "total": 1,
+                            "correct": 0,
+                            "accuracy": 0.0
+                        },
+                        "dog": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "person": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 0.8
+                },
+                "SUN09": {
+                    "total": 5,
+                    "correct": 5,
+                    "classes": {
+                        "bird": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "car": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "chair": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "dog": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "person": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 1.0
+                },
+                "VOC2007": {
+                    "total": 5,
+                    "correct": 5,
+                    "classes": {
+                        "bird": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "car": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "chair": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "dog": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "person": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 1.0
+                }
+            },
+            "accuracy": 0.95
+        }
+    }
+}

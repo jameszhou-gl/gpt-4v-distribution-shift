@@ -1,0 +1,12 @@
+2023-11-18 21:08:16,840 - Saving in ./exp_output/2023-11-18-21_08_16
+2023-11-18 21:08:16,840 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset=['VLCS'], output_dir='./exp_output/2023-11-18-21_08_16', num_sample=1, model_name='clip-vit-base-patch16', save_samples=True)
+2023-11-18 21:08:23,894 - sampling data examples in VLCS, and writing into unified_input_VLCS.json
+2023-11-18 21:08:23,895 - Processing VLCS: 4 domains, 5 classes
+2023-11-18 21:08:28,920 - CLIPModel processes completed.
+2023-11-18 21:08:28,923 - saving results into ./exp_output/2023-11-18-21_08_16/results_clip-vit-base-patch16.json
+2023-11-18 21:10:33,520 - Saving in exp_output/2023-11-18-21_08_16/
+2023-11-18 21:10:33,521 - Run an experiment continuing from an existing directory
+2023-11-18 21:10:33,521 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset=['VLCS'], output_dir='exp_output/2023-11-18-21_08_16/', num_sample=20, model_name='llava-v1.5-13b', continue_dir='exp_output/2023-11-18-21_08_16/', save_samples=False)
+2023-11-18 21:10:33,521 - Load an existing unified_input_VLCS.json
+2023-11-18 21:10:33,521 - Convert the unified input format into llava vqa format
+2023-11-18 21:13:23,820 - saving results into exp_output/2023-11-18-21_08_16//results_llava-v1.5-13b.json
