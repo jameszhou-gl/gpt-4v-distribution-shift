@@ -48,17 +48,22 @@ def convert_unified_input_into_llava_vqa(dataset, data, args):
     return question_file
 
 
-def search_pred_info(text_in_llava, class_names):
+def search_pred_info(answer_by_llava, class_names):
+    text_in_llava = answer_by_llava['text']
     predicted_class = None
     for class_name in class_names:
         # Pattern to match 'Answer Choice: [class_name]' or 'Answer Choice: class_name' (case-insensitive)
         pattern = re.compile(
-            r'Answer Choice: \[?' + re.escape(class_name) + r'\]?', re.IGNORECASE)
+            r"Answer Choice:\s*(?:\[)?'?\"?" +
+            re.escape(class_name) + r"'?\"?(?:\])?",
+            re.IGNORECASE
+        )
         if pattern.search(text_in_llava):
             predicted_class = class_name
             break
     if not predicted_class:
-        logger.info('query failed')
+        raise ValueError('Query failed for item {}; Check the answer or the pattern matching carefully!'.format(
+            answer_by_llava['question_id']))
     # Regular expression patterns to extract Confidence Score (0~1) and Reasoning
     confidence_score_pattern = r'Confidence Score:\s*([0-9]*\.?[0-9]+)'
     reasoning_pattern = r'Reasoning:\s*(.+)'
@@ -94,7 +99,7 @@ def convert_llava_answer_into_unified_output(dataset, answer_file, unified_input
             unified_output['subject'] = item['subject']
             unified_output['true_class'] = item['class']
             predicted_class, confidence_score, reasoning = search_pred_info(
-                answer_by_llava['text'], class_names)
+                answer_by_llava, class_names)
             unified_output['predicted_class'] = predicted_class
             unified_output['image'] = item['image']
             unified_output['id'] = item_id

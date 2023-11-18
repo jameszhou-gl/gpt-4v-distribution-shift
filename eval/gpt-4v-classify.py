@@ -96,7 +96,7 @@ def main(args):
     Please respond with the following format:
     ---BEGIN FORMAT TEMPLATE---
     Answer Choice: [Your Answer Choice Here]
-    Confidence Score: [Your Numerical Prediction Confidence Score Here]
+    Confidence Score: [Your Numerical Prediction Confidence Score Here From 0 To 1]
     Reasoning: [Your Reasoning Behind This Answer Here]
     ---END FORMAT TEMPLATE---
 
