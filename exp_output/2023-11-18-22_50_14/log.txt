@@ -1,0 +1,11 @@
+2023-11-18 22:50:14,185 - Saving in ./exp_output/2023-11-18-22_50_14
+2023-11-18 22:50:14,186 - Start a new experiment
+2023-11-18 22:50:14,186 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset=['PACS'], output_dir='./exp_output/2023-11-18-22_50_14', num_sample=1, model_name='gpt-4-vision-preview', continue_dir=None, save_samples=False)
+2023-11-18 22:50:14,186 - sampling data examples in PACS, and writing into unified_input_PACS.json
+2023-11-18 22:50:14,186 - Processing PACS: 4 domains, 7 classes
+2023-11-18 22:50:16,872 - predicted_class: dog
+2023-11-18 22:50:18,933 - predicted_class: giraffe
+2023-11-18 22:50:21,017 - predicted_class: horse
+2023-11-18 22:50:23,649 - predicted_class: person
+2023-11-18 22:50:26,152 - predicted_class: guitar
+2023-11-18 22:50:26,153 - saving results into ./exp_output/2023-11-18-22_50_14/results_gpt-4-vision-preview.json

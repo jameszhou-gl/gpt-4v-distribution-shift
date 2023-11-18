@@ -1,0 +1,5 @@
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "dog", "predicted_class": "dog", "image": "art_painting/dog/pic_186.jpg", "id": "1"}
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "giraffe", "predicted_class": "giraffe", "image": "art_painting/giraffe/pic_177.jpg", "id": "2"}
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "horse", "predicted_class": "horse", "image": "art_painting/horse/pic_005.jpg", "id": "3"}
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "person", "predicted_class": "person", "image": "art_painting/person/pic_466.jpg", "id": "4"}
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "guitar", "predicted_class": "guitar", "image": "art_painting/guitar/pic_037.jpg", "id": "5"}
