@@ -12,24 +12,32 @@ from data.random_sampler import gen_sample_json
 
 def setup(args):
     # setup output directory and logging
-    current_time = datetime.now().strftime('%Y-%m-%d-%H_%M_%S')
-    args.output_dir = f"{args.output_dir}/{current_time}"
-    os.makedirs(args.output_dir)
+    if args.continue_dir is not None:
+        args.output_dir = args.continue_dir
+        logger = setup_logging(args.output_dir)
+        logger.info('Run an experiment continuing from an existing directory')
+    else:
+        current_time = datetime.now().strftime('%Y-%m-%d-%H_%M_%S')
+        args.output_dir = f"{args.output_dir}/{current_time}"
+        os.makedirs(args.output_dir)
+        logger = setup_logging(args.output_dir)
+        logger.info('Start a new experiment')
+
     # Set up logging
-    logger = setup_logging(args.output_dir)
     logger.info(args)
     return logger
 
 
 def convert_unified_input_into_llava_vqa(dataset, data, args):
-    question_file = f'{args.output_dir}/unified_input_{dataset}_in_llava_vqa.jsonl'
+    question_file = f'{args.output_dir}/input_{dataset}_in_llava_vqa.jsonl'
     first_flag = True
     class_names = data['class_names']
     for item_id, item in data['samples'].items():
         example_vqa_format = {}
         example_vqa_format['image'] = os.path.join(dataset, item['image'])
-        prompt = f"""Given the image, answer the following question using the specified format. Question: What is in this image? Choices: {class_names}. 
-        Please respond with the following format:
+        prompt = f"""Given the image, answer the following question using the specified format. 
+        Question: What is in this image? Choice list: {class_names}. 
+        Please choose a choice from the list and respond with the following format:
         ---BEGIN FORMAT TEMPLATE---
         Answer Choice: [Your Answer Choice Here]
         Confidence Score: [Your Numerical Prediction Confidence Score Here From 0 To 1]
@@ -62,7 +70,7 @@ def search_pred_info(answer_by_llava, class_names):
             predicted_class = class_name
             break
     if not predicted_class:
-        raise ValueError('Query failed for item {}; Check the answer or the pattern matching carefully!'.format(
+        logger.warning('Query failed for item {}; Check the answer or the pattern matching carefully!'.format(
             answer_by_llava['question_id']))
     # Regular expression patterns to extract Confidence Score (0~1) and Reasoning
     confidence_score_pattern = r'Confidence Score:\s*([0-9]*\.?[0-9]+)'
@@ -88,6 +96,7 @@ def search_pred_info(answer_by_llava, class_names):
 def convert_llava_answer_into_unified_output(dataset, answer_file, unified_input):
     with open(answer_file, 'r') as file:
         class_names = unified_input['class_names']
+        first_flag = True
         for line in file:
             answer_by_llava = json.loads(line)
             item_id = answer_by_llava['question_id']
@@ -105,25 +114,30 @@ def convert_llava_answer_into_unified_output(dataset, answer_file, unified_input
             unified_output['id'] = item_id
             unified_output['confidence_score'] = confidence_score
             unified_output['reasoning'] = reasoning
-            with open(f'{args.output_dir}/unified_output.jsonl', 'a') as jsonl_file:
+            mode = 'w' if first_flag else 'a'
+            with open(f'{args.output_dir}/unified_output_{args.model_name}.jsonl', mode) as jsonl_file:
                 jsonl_file.write(json.dumps(unified_output) + '\n')
+            first_flag = False
 
 
 def main(args):
     for each_dataset in args.dataset:
-        gen_sample_json(dataset=each_dataset, num_sample=args.num_sample,
-                        data_dir=args.data_dir, output_dir=args.output_dir)
+        if args.continue_dir is not None:
+            logger.info(f'Load an existing unified_input_{each_dataset}.json')
+        else:
+            gen_sample_json(dataset=each_dataset, num_sample=args.num_sample,
+                            data_dir=args.data_dir, output_dir=args.output_dir)
         # Load the JSON file
         with open(f'{args.output_dir}/unified_input_{each_dataset}.json', 'r') as f:
             data = json.load(f)
         logger.info(
-            'convert the unified input format, into llava vqa format')
+            'Convert the unified input format into llava vqa format')
         question_file = convert_unified_input_into_llava_vqa(
             each_dataset, data, args)
         answer_file = f"{args.output_dir}/output_{each_dataset}_in_llava_vqa.jsonl"
         llava_model_vqa = [
             "python", "-m", "llava.eval.model_vqa",
-            "--model-path", f"liuhaotian/llava-v1.5-{args.model_size}",
+            "--model-path", f"liuhaotian/{args.model_name}",
             "--question-file", question_file,
             "--image-folder", f"{args.data_dir}",
             "--answers-file", answer_file,
@@ -150,9 +164,10 @@ if __name__ == '__main__':
     parser.add_argument('--output_dir', type=str, default="./exp_output")
     parser.add_argument('--num_sample', type=int, default=20,
                         help="the number of samples for each class")
-    parser.add_argument('--model_size', type=str,
-                        choices=['7b', '13b'], default="13b")
-    # parser.add_argument('--continue', type=str, default="./exp_output")
+    parser.add_argument('--model_name', type=str,
+                        choices=['llava-v1.5-7b', 'llava-v1.5-13b'], default="llava-v1.5-13b")
+    parser.add_argument('--continue_dir', type=str, default=None,
+                        help="evaluate llava on the same sample sets with CLIP, i.e., exp_output/2023-11-18-19_56_06")
     args = parser.parse_args()
 
     logger = setup(args)

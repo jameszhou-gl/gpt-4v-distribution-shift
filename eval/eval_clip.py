@@ -22,8 +22,8 @@ def setup(args):
 
 def main(args):
     # Load the CLIP model and processor
-    model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
-    processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
+    model = CLIPModel.from_pretrained(f'openai/{args.model_name}')
+    processor = CLIPProcessor.from_pretrained(f'openai/{args.model_name}')
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model.to(device)
     for each_dataset in args.dataset:
@@ -62,7 +62,7 @@ def main(args):
             unified_output['predicted_class'] = predicted_class
             unified_output['image'] = item['image']
             unified_output['id'] = item_id
-            with open(f'{args.output_dir}/unified_output.jsonl', 'a') as jsonl_file:
+            with open(f'{args.output_dir}/unified_output_{args.model_name}.jsonl', 'a') as jsonl_file:
                 jsonl_file.write(json.dumps(unified_output) + '\n')
 
     logger.info("CLIPModel processes completed.")
@@ -78,6 +78,8 @@ if __name__ == '__main__':
     parser.add_argument('--output_dir', type=str, default="./exp_output")
     parser.add_argument('--num_sample', type=int, default=20,
                         help="the number of samples for each class")
+    parser.add_argument('--model_name', type=str,
+                        choices=['clip-vit-base-patch16', 'clip-vit-base-patch32'], default="clip-vit-base-patch16")
     args = parser.parse_args()
 
     logger = setup(args)

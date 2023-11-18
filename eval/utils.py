@@ -36,7 +36,8 @@ def read_jsonl(file_path):
 def analyse_unified_output(args):
     logger = logging.getLogger('gpt-4v-distribution-shift-logger')
     # Read data
-    data = read_jsonl(f'{args.output_dir}/unified_output.jsonl')
+    data = read_jsonl(
+        f'{args.output_dir}/unified_output_{args.model_name}.jsonl')
     # Initialize counters and structures
     total_count = 0
     correct_count = 0
@@ -92,9 +93,10 @@ def analyse_unified_output(args):
         'overall_accuracy': overall_accuracy,
         'datasets': dataset_domain_class_accuracy
     }
-    with open(f'{args.output_dir}/results.json', 'w') as outfile:
+    with open(f'{args.output_dir}/results_{args.model_name}.json', 'w') as outfile:
         json.dump(output_data, outfile, indent=4)
-    logger.info(f'saving results into {args.output_dir}/results.json')
+    logger.info(
+        f'saving results into {args.output_dir}/results_{args.model_name}.json')
 
 
 # def seed_hash(*args):
