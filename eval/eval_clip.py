@@ -27,8 +27,7 @@ def main(args):
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model.to(device)
     for each_dataset in args.dataset:
-        gen_sample_json(dataset=each_dataset, num_sample=args.num_sample,
-                        data_dir=args.data_dir, output_dir=args.output_dir)
+        gen_sample_json(dataset=each_dataset, args=args)
         # Load the JSON file
         with open(f'{args.output_dir}/unified_input_{each_dataset}.json', 'r') as f:
             data = json.load(f)
@@ -80,6 +79,8 @@ if __name__ == '__main__':
                         help="the number of samples for each class")
     parser.add_argument('--model_name', type=str,
                         choices=['clip-vit-base-patch16', 'clip-vit-base-patch32'], default="clip-vit-base-patch16")
+    parser.add_argument('--save_samples', action='store_true',
+                        help='whether save the sample sets into output_dir')
     args = parser.parse_args()
 
     logger = setup(args)

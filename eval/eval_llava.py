@@ -125,8 +125,7 @@ def main(args):
         if args.continue_dir is not None:
             logger.info(f'Load an existing unified_input_{each_dataset}.json')
         else:
-            gen_sample_json(dataset=each_dataset, num_sample=args.num_sample,
-                            data_dir=args.data_dir, output_dir=args.output_dir)
+            gen_sample_json(dataset=each_dataset, args=args)
         # Load the JSON file
         with open(f'{args.output_dir}/unified_input_{each_dataset}.json', 'r') as f:
             data = json.load(f)
@@ -168,6 +167,8 @@ if __name__ == '__main__':
                         choices=['llava-v1.5-7b', 'llava-v1.5-13b'], default="llava-v1.5-13b")
     parser.add_argument('--continue_dir', type=str, default=None,
                         help="evaluate llava on the same sample sets with CLIP, i.e., exp_output/2023-11-18-19_56_06")
+    parser.add_argument('--save_samples', action='store_true',
+                        help='whether save the sample sets into output_dir')
     args = parser.parse_args()
 
     logger = setup(args)
