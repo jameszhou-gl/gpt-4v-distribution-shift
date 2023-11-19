@@ -93,10 +93,10 @@ def search_pred_info(answer_by_llava, class_names):
     return predicted_class, confidence_score, reasoning
 
 
-def convert_llava_answer_into_unified_output(dataset, answer_file, unified_input):
+def convert_llava_answer_into_unified_output(dataset, answer_file, unified_input, first_dataset_flag=True):
     with open(answer_file, 'r') as file:
         class_names = unified_input['class_names']
-        first_flag = True
+        mode = 'w' if first_dataset_flag else 'a'
         for line in file:
             answer_by_llava = json.loads(line)
             item_id = answer_by_llava['question_id']
@@ -114,14 +114,13 @@ def convert_llava_answer_into_unified_output(dataset, answer_file, unified_input
             unified_output['id'] = item_id
             unified_output['confidence_score'] = confidence_score
             unified_output['reasoning'] = reasoning
-            mode = 'w' if first_flag else 'a'
             with open(f'{args.output_dir}/unified_output_{args.model_name}.jsonl', mode) as jsonl_file:
                 jsonl_file.write(json.dumps(unified_output) + '\n')
-            first_flag = False
+            mode = 'a'
 
 
 def main(args):
-    for each_dataset in args.dataset:
+    for idx, each_dataset in enumerate(args.dataset):
         if args.continue_dir is not None:
             logger.info(f'Load an existing unified_input_{each_dataset}.json')
         else:
@@ -134,23 +133,24 @@ def main(args):
         question_file = convert_unified_input_into_llava_vqa(
             each_dataset, data, args)
         answer_file = f"{args.output_dir}/output_{each_dataset}_in_llava_vqa.jsonl"
-        llava_model_vqa = [
-            "python", "-m", "llava.eval.model_vqa",
-            "--model-path", f"liuhaotian/{args.model_name}",
-            "--question-file", question_file,
-            "--image-folder", f"{args.data_dir}",
-            "--answers-file", answer_file,
-            "--temperature", "0",
-            "--conv-mode", "vicuna_v1"
-        ]
-        # Run the subprocess and capture the output
-        result = subprocess.run(
-            llava_model_vqa, stdout=subprocess.PIPE, text=True)
-        # Log stdout
-        if result.stdout:
-            logger.info("LLaVA Output:\n" + result.stdout)
+        # llava_model_vqa = [
+        #     "python", "-m", "llava.eval.model_vqa",
+        #     "--model-path", f"liuhaotian/{args.model_name}",
+        #     "--question-file", question_file,
+        #     "--image-folder", f"{args.data_dir}",
+        #     "--answers-file", answer_file,
+        #     "--temperature", "0",
+        #     "--conv-mode", "vicuna_v1"
+        # ]
+        # # Run the subprocess and capture the output
+        # result = subprocess.run(
+        #     llava_model_vqa, stdout=subprocess.PIPE, text=True)
+        # # Log stdout
+        # if result.stdout:
+        #     logger.info("LLaVA Output:\n" + result.stdout)
+        first_dataset_flag = True if idx == 0 else False
         convert_llava_answer_into_unified_output(
-            dataset=each_dataset, answer_file=answer_file, unified_input=data)
+            dataset=each_dataset, answer_file=answer_file, unified_input=data, first_dataset_flag=first_dataset_flag)
     analyse_unified_output(args)
 
 
