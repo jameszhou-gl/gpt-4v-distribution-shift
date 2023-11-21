@@ -111,6 +111,7 @@ def main(args):
                 logger.warning(f'{args.model_name} returns server error')
             else:
                 answer_str = response['choices'][0]['message']['content']
+                logger.info(f'answer by gpt-4v:\n{answer_str}')
                 predicted_class = None
                 for class_name in class_names:
                     pattern = re.compile(
