@@ -45,25 +45,30 @@ def gen_sample_json(dataset='PACS', args=None):
         if os.path.exists(domain_path) and os.path.isdir(domain_path):
             for class_id, class_name in enumerate(selected_images_info['class_names']):
                 class_path = os.path.join(domain_path, class_name)
-                images = [os.path.join(domain, class_name, img) for img in os.listdir(
-                    class_path) if img.endswith((".jpg", ".png"))]
+                # Check if the path exists and is a directory
+                if os.path.exists(class_path) and os.path.isdir(class_path):
+                    print(f"The directory {class_path} exists.")
+                    images = [os.path.join(domain, class_name, img) for img in os.listdir(
+                        class_path) if img.endswith((".jpg", ".png"))]
 
-                # Randomly sample args.num_sample images
-                if len(images) >= args.num_sample:
-                    sampled_images = random.sample(images, args.num_sample)
-                    for image in sampled_images:
-                        image_id = len(selected_images_info['samples']) + 1
-                        selected_images_info['samples'][str(image_id)] = {
-                            "domain": domain,
-                            "class": class_name,
-                            "image": image,
-                            "class_id": str(class_id),
-                            "subject": subject
-                        }
+                    # Randomly sample args.num_sample images
+                    if len(images) >= args.num_sample:
+                        sampled_images = random.sample(images, args.num_sample)
+                        for image in sampled_images:
+                            image_id = len(selected_images_info['samples']) + 1
+                            selected_images_info['samples'][str(image_id)] = {
+                                "domain": domain,
+                                "class": class_name,
+                                "image": image,
+                                "class_id": str(class_id),
+                                "subject": subject
+                            }
+                    else:
+                        logger.info(
+                            f"Not enough images in {os.path.join(domain, class_name)} to sample {args.num_sample} images.")
                 else:
-                    logger.info(
-                        f"Not enough images in {os.path.join(domain, class_name)} to sample {args.num_sample} images.")
-
+                    # in fmow_v1.1_processed, there're clsses less than 62 in specific domains like region_5
+                    logger.info(f"The class {class_name} does not exist in {domain}.")
     # Write selected images information to a JSON file
     with open(f'{args.output_dir}/unified_input_{dataset}.json', 'w') as f:
         json.dump(selected_images_info, f, indent=4)
