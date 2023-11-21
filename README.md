@@ -45,13 +45,22 @@ pip install -e .
 
 follow [the instructions for preparing the datasets](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/docs/Instructions%20for%20preparing%20the%20datasets.md)
 
+After downloading camelyon17_v1.0 and fmow_v1.1,
+run the following code snippet to convert the file structures similar to PACS and VLCS.
+```bash
+python ./data/process_wilds.py
+```
 ### Supported Datasets
 
-Currently, the project supports the following datasets:
+Currently, the project supports the following datasets ([See detail here](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/data/dataset_info.json)):
 
 1. PACS
 2. VLCS
-3. xxx
+3. office_home
+4. domain_net
+5. camelyon17_v1.0
+6. fmow_v1.1
+7. terra_incognita
 
 ### Construct and Maintain a JSON File Storing Metadata for Each Dataset
 
