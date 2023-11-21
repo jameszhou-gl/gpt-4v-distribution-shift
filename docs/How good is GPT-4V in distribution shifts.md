@@ -24,14 +24,21 @@
 |                          OfficeHome                          | Natural  | Classification | Diversity Type? |
 |                          DomainNet                           | Natural  | Classification |                 |
 |                       Terra Incognita                        | Natural  | Classification |                 |
-|                       Camelyon17-WILDS                       | Natural  | Classification |                 |
+|                                                              |          |                |                 |
 |            [ImageNetv2](https://imagenetv2.org/)             | Natural  | Classification |                 |
 | [ImageNet-R](https://paperswithcode.com/dataset/imagenet-r)  | Natural  | Classification |                 |
 | [ImageNet Sketch](https://github.com/HaohanWang/ImageNet-Sketch) | Natural  | Classification |                 |
 | [ImageNet-A](https://paperswithcode.com/dataset/imagenet-a)  | Natural  | Classification |                 |
-|                                                              | Protein  |                |                 |
+|                         DrugOOD-Scaffold                     | Molecular| Classification |    Scaffold     |
+|                         DrugOOD-Assay                        | Molecular| Classification |    Assay        |
 |                                                              | Medical  |                |                 |
-|                                                              |          |                |                 |
+|                       Camelyon17-WILDS                       | Medical  |                |   hospital      |
+|                           iWildCam-WILDS                     | Natural  | Classification |    camera       |
+|                           RxRx1-WILDS                        | Biology  |                |    batch        |
+|                           FMoW-WILDS                         | Natural  |                |   time,region   |
+|                           PovertyMap-WILDS                   | Natural  |                |  country,ru/ur  |
+|                           GlobalWheat-WILDS                  | Natural  |                |  location,time  |
+|                           OGB-MolPCBA-WILDS                  | Molecular|                |  Scaffold       |
 |                             Todo                             | Natural  |   Regression   |                 |
 |                                                              |          |                |                 |
 |                                                              |          |                |                 |
