@@ -1,4 +1,5 @@
 .vscode
+.vscode-upload.json
 output.*.txt
 *.pyc
 exp_output/*

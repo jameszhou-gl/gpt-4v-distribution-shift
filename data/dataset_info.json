@@ -476,7 +476,7 @@
             "hospital_4"
         ],
         "class_names": [
-            "not tumor",
+            "normal",
             "tumor"
         ],
         "subject": "medical"
