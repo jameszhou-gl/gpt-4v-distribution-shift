@@ -47,7 +47,6 @@ def gen_sample_json(dataset='PACS', args=None):
                 class_path = os.path.join(domain_path, class_name)
                 # Check if the path exists and is a directory
                 if os.path.exists(class_path) and os.path.isdir(class_path):
-                    print(f"The directory {class_path} exists.")
                     images = [os.path.join(domain, class_name, img) for img in os.listdir(
                         class_path) if img.endswith((".jpg", ".png"))]
 
