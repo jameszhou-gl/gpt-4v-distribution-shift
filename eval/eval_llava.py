@@ -133,6 +133,7 @@ def main(args):
         question_file = convert_unified_input_into_llava_vqa(
             each_dataset, data, args)
         answer_file = f"{args.output_dir}/output_{each_dataset}_in_llava_vqa.jsonl"
+        first_dataset_flag = True if idx == 0 else False
         llava_model_vqa = [
             "python", "-m", "llava.eval.model_vqa",
             "--model-path", f"liuhaotian/{args.model_name}",
