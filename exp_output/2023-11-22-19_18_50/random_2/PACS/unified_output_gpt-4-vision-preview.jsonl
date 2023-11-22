@@ -1,0 +1,10 @@
+{"dataset": "PACS", "domain": "cartoon", "subject": "nature", "true_class": "guitar", "predicted_class": "guitar", "image": "cartoon/guitar/pic_116.jpg", "id": "0"}
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "guitar", "predicted_class": "guitar", "image": "art_painting/guitar/pic_076.jpg", "id": "1"}
+{"dataset": "PACS", "domain": "sketch", "subject": "nature", "true_class": "horse", "predicted_class": "horse", "image": "sketch/horse/n02374451_2825-1.png", "id": "2"}
+{"dataset": "PACS", "domain": "sketch", "subject": "nature", "true_class": "dog", "predicted_class": "dog", "image": "sketch/dog/5358.png", "id": "3"}
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "giraffe", "predicted_class": "giraffe", "image": "art_painting/giraffe/pic_158.jpg", "id": "4"}
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "horse", "predicted_class": "horse", "image": "art_painting/horse/pic_168.jpg", "id": "5"}
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "guitar", "predicted_class": "guitar", "image": "art_painting/guitar/pic_106.jpg", "id": "6"}
+{"dataset": "PACS", "domain": "photo", "subject": "nature", "true_class": "giraffe", "predicted_class": "giraffe", "image": "photo/giraffe/n02439033_14184.jpg", "id": "7"}
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "guitar", "predicted_class": "guitar", "image": "art_painting/guitar/pic_145.jpg", "id": "8"}
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "person", "predicted_class": "person", "image": "art_painting/person/pic_003.jpg", "id": "9"}

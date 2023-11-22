@@ -1,0 +1,77 @@
+{
+    "dataset": "PACS",
+    "domains": [
+        "cartoon",
+        "art_painting",
+        "sketch",
+        "photo"
+    ],
+    "class_names": [
+        "dog",
+        "house",
+        "giraffe",
+        "horse"
+    ],
+    "samples": {
+        "0": {
+            "domain": "cartoon",
+            "class": "giraffe",
+            "image": "cartoon/giraffe/pic_346.jpg",
+            "subject": "nature"
+        },
+        "1": {
+            "domain": "photo",
+            "class": "horse",
+            "image": "photo/horse/n02374451_2372.jpg",
+            "subject": "nature"
+        },
+        "2": {
+            "domain": "photo",
+            "class": "dog",
+            "image": "photo/dog/056_0077.jpg",
+            "subject": "nature"
+        },
+        "3": {
+            "domain": "photo",
+            "class": "house",
+            "image": "photo/house/pic_239.jpg",
+            "subject": "nature"
+        },
+        "4": {
+            "domain": "art_painting",
+            "class": "house",
+            "image": "art_painting/house/pic_192.jpg",
+            "subject": "nature"
+        },
+        "5": {
+            "domain": "photo",
+            "class": "house",
+            "image": "photo/house/pic_022.jpg",
+            "subject": "nature"
+        },
+        "6": {
+            "domain": "sketch",
+            "class": "dog",
+            "image": "sketch/dog/n02106662_8870-7.png",
+            "subject": "nature"
+        },
+        "7": {
+            "domain": "sketch",
+            "class": "dog",
+            "image": "sketch/dog/n02109525_8211-2.png",
+            "subject": "nature"
+        },
+        "8": {
+            "domain": "cartoon",
+            "class": "horse",
+            "image": "cartoon/horse/pic_217.jpg",
+            "subject": "nature"
+        },
+        "9": {
+            "domain": "cartoon",
+            "class": "dog",
+            "image": "cartoon/dog/pic_432.jpg",
+            "subject": "nature"
+        }
+    }
+}

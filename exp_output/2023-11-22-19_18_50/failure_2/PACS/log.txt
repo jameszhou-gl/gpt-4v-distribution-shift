@@ -1,0 +1,26 @@
+2023-11-22 19:41:36,937 - Saving in exp_output/2023-11-22-19_18_50/failure_2/PACS
+2023-11-22 19:41:36,938 - Run an experiment continuing from an existing directory
+2023-11-22 19:41:36,938 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset=['PACS'], output_dir='exp_output/2023-11-22-19_18_50/failure_2/PACS', num_sample=20, model_name='gpt-4-vision-preview', continue_dir='exp_output/2023-11-22-19_18_50/failure_2/PACS', save_samples=False, openai_api_key='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')
+2023-11-22 19:41:36,938 - Load an existing unified_input_PACS.json
+2023-11-22 19:41:48,572 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: dog
+Confidence Score: 1
+Reasoning: The image depicts an animal with characteristics typical of a dog, such as the shape of its ears, muzzle, and body.
+---END FORMAT TEMPLATE---
+2023-11-22 19:41:48,573 - predicted_class: dog
+2023-11-22 19:41:52,607 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: giraffe
+Confidence Score: 1
+Reasoning: The image depicts a long-necked animal with two ossicone-like protrusions on its head, which is characteristic of a giraffe.
+---END FORMAT TEMPLATE---
+2023-11-22 19:41:52,608 - predicted_class: giraffe
+2023-11-22 19:41:56,039 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: dog
+Confidence Score: 0.95
+Reasoning: The image appears to depict a simple line drawing of an animal with features that resemble a dog, such as a pointed ear, a short neck, and a tail that is typically seen in canine representations.
+---END FORMAT TEMPLATE---
+2023-11-22 19:41:56,039 - predicted_class: dog
+2023-11-22 19:41:56,040 - saving results into exp_output/2023-11-22-19_18_50/failure_2/PACS/results_gpt-4-vision-preview.json

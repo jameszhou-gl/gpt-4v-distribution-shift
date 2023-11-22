@@ -1,0 +1,115 @@
+{
+    "overall_accuracy": 1.0,
+    "datasets": {
+        "PACS": {
+            "total": 20,
+            "correct": 20,
+            "domains": {
+                "cartoon": {
+                    "total": 4,
+                    "correct": 4,
+                    "classes": {
+                        "giraffe": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "horse": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "dog": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "guitar": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 1.0
+                },
+                "photo": {
+                    "total": 5,
+                    "correct": 5,
+                    "classes": {
+                        "horse": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "dog": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "house": {
+                            "total": 2,
+                            "correct": 2,
+                            "accuracy": 1.0
+                        },
+                        "giraffe": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 1.0
+                },
+                "art_painting": {
+                    "total": 7,
+                    "correct": 7,
+                    "classes": {
+                        "house": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "guitar": {
+                            "total": 3,
+                            "correct": 3,
+                            "accuracy": 1.0
+                        },
+                        "giraffe": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "horse": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "person": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 1.0
+                },
+                "sketch": {
+                    "total": 4,
+                    "correct": 4,
+                    "classes": {
+                        "dog": {
+                            "total": 3,
+                            "correct": 3,
+                            "accuracy": 1.0
+                        },
+                        "horse": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 1.0
+                }
+            },
+            "accuracy": 1.0
+        }
+    }
+}

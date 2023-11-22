@@ -1,0 +1,30 @@
+{
+    "dataset": "PACS",
+    "domains": [
+        "sketch"
+    ],
+    "class_names": [
+        "dog",
+        "giraffe"
+    ],
+    "samples": {
+        "0": {
+            "domain": "sketch",
+            "class": "dog",
+            "image": "sketch/dog/n02106662_8870-7.png",
+            "subject": "nature"
+        },
+        "1": {
+            "domain": "sketch",
+            "class": "giraffe",
+            "image": "sketch/giraffe/n02439033_15936-5.png",
+            "subject": "nature"
+        },
+        "2": {
+            "domain": "sketch",
+            "class": "dog",
+            "image": "sketch/dog/5358.png",
+            "subject": "nature"
+        }
+    }
+}

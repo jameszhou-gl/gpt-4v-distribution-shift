@@ -1,0 +1,10 @@
+{"dataset": "PACS", "domain": "cartoon", "subject": "nature", "true_class": "giraffe", "predicted_class": "giraffe", "image": "cartoon/giraffe/pic_346.jpg", "id": "0"}
+{"dataset": "PACS", "domain": "photo", "subject": "nature", "true_class": "horse", "predicted_class": "horse", "image": "photo/horse/n02374451_2372.jpg", "id": "1"}
+{"dataset": "PACS", "domain": "photo", "subject": "nature", "true_class": "dog", "predicted_class": "dog", "image": "photo/dog/056_0077.jpg", "id": "2"}
+{"dataset": "PACS", "domain": "photo", "subject": "nature", "true_class": "house", "predicted_class": "house", "image": "photo/house/pic_239.jpg", "id": "3"}
+{"dataset": "PACS", "domain": "art_painting", "subject": "nature", "true_class": "house", "predicted_class": "house", "image": "art_painting/house/pic_192.jpg", "id": "4"}
+{"dataset": "PACS", "domain": "photo", "subject": "nature", "true_class": "house", "predicted_class": "house", "image": "photo/house/pic_022.jpg", "id": "5"}
+{"dataset": "PACS", "domain": "sketch", "subject": "nature", "true_class": "dog", "predicted_class": "dog", "image": "sketch/dog/n02106662_8870-7.png", "id": "6"}
+{"dataset": "PACS", "domain": "sketch", "subject": "nature", "true_class": "dog", "predicted_class": "dog", "image": "sketch/dog/n02109525_8211-2.png", "id": "7"}
+{"dataset": "PACS", "domain": "cartoon", "subject": "nature", "true_class": "horse", "predicted_class": "horse", "image": "cartoon/horse/pic_217.jpg", "id": "8"}
+{"dataset": "PACS", "domain": "cartoon", "subject": "nature", "true_class": "dog", "predicted_class": "dog", "image": "cartoon/dog/pic_432.jpg", "id": "9"}

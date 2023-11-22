@@ -1,0 +1,75 @@
+2023-11-22 19:42:30,437 - Saving in exp_output/2023-11-22-19_18_50/random_2/PACS
+2023-11-22 19:42:30,438 - Run an experiment continuing from an existing directory
+2023-11-22 19:42:30,438 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset=['PACS'], output_dir='exp_output/2023-11-22-19_18_50/random_2/PACS', num_sample=20, model_name='gpt-4-vision-preview', continue_dir='exp_output/2023-11-22-19_18_50/random_2/PACS', save_samples=False, openai_api_key='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')
+2023-11-22 19:42:30,438 - Load an existing unified_input_PACS.json
+2023-11-22 19:42:33,017 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: guitar
+Confidence Score: 1.0
+Reasoning: The image clearly shows a graphic representation of a guitar complete with strings, body, sound hole, and musical notes suggesting its use. It matches the appearance of the commonly known musical instrument and does not resemble the other choices provided.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:33,018 - predicted_class: guitar
+2023-11-22 19:42:39,795 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: guitar
+Confidence Score: 1
+Reasoning: The image clearly displays a guitar with a distinctive body shape, strings, sound hole, fretboard, and headstock, which are characteristic features of a guitar.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:39,796 - predicted_class: guitar
+2023-11-22 19:42:42,592 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: horse
+Confidence Score: 0.85
+Reasoning: The image appears to depict a quadrupedal animal with a mane and a tail, which are characteristic features of a horse. It does not have the long neck typical of a giraffe, nor the specific features of a dog or person, and it is not shaped like a guitar.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:42,592 - predicted_class: horse
+2023-11-22 19:42:44,780 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: dog
+Confidence Score: 0.9
+Reasoning: The image appears to be a simple line drawing of an animal with features that resemble a dog, such as floppy ears and a tail that is characteristic of many dog breeds.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:44,781 - predicted_class: dog
+2023-11-22 19:42:46,908 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: giraffe
+Confidence Score: 1
+Reasoning: The image clearly depicts a drawing of a giraffe. It is recognizable by its long neck, patterned spots, and giraffe-like head shape.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:46,908 - predicted_class: giraffe
+2023-11-22 19:42:49,393 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: horse
+Confidence Score: 1
+Reasoning: The image contains depictions of horses standing together. Their distinct equine features such as long necks, long heads with a straight profile, body shape, and size clearly identify them as horses.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:49,393 - predicted_class: horse
+2023-11-22 19:42:55,502 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: guitar
+Confidence Score: 1
+Reasoning: The image contains a painting with a prominent depiction of a guitar on a table, which is recognizable by its body shape, strings, and sound hole.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:55,502 - predicted_class: guitar
+2023-11-22 19:42:58,545 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: giraffe
+Confidence Score: 1
+Reasoning: The image clearly shows the head and neck of a giraffe against a backdrop of the sky. The distinctive patterns on the fur and the horn-like ossicones are unique to giraffes.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:58,545 - predicted_class: giraffe
+2023-11-22 19:43:01,298 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: guitar
+Confidence Score: 0.95
+Reasoning: The image clearly shows an object with strings, a neck, and pickups that are characteristic of a guitar. The body shape and design also match that of a typical electric guitar. Additionally, the detail and coloration suggest it is a painted representation of a guitar rather than an actual instrument.
+---END FORMAT TEMPLATE---
+2023-11-22 19:43:01,298 - predicted_class: guitar
+2023-11-22 19:43:04,630 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: person
+Confidence Score: 1
+Reasoning: The image shows a detailed depiction of a person's back with visible musculature, skin tone, and human clothing, which clearly matches the characteristics of a human being.
+---END FORMAT TEMPLATE---
+2023-11-22 19:43:04,631 - predicted_class: person
+2023-11-22 19:43:04,632 - saving results into exp_output/2023-11-22-19_18_50/random_2/PACS/results_gpt-4-vision-preview.json

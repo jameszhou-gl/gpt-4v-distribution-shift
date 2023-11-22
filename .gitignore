@@ -9,4 +9,5 @@ __pycache__
 evaluation/eval_gpt-4v_multi-imgs.py
 !exp_output/2023-11-18-05_48_38/
 !exp_output/2023-11-18-21_08_16/
-!exp_output/2023-11-18-22_50_14
+!exp_output/2023-11-18-22_50_14/
+!exp_output/2023-11-22-19_18_50/

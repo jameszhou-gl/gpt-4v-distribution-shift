@@ -1,0 +1,26 @@
+2023-11-22 19:41:27,363 - Saving in exp_output/2023-11-22-19_18_50/failure_1/PACS
+2023-11-22 19:41:27,364 - Run an experiment continuing from an existing directory
+2023-11-22 19:41:27,364 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset=['PACS'], output_dir='exp_output/2023-11-22-19_18_50/failure_1/PACS', num_sample=20, model_name='gpt-4-vision-preview', continue_dir='exp_output/2023-11-22-19_18_50/failure_1/PACS', save_samples=False, openai_api_key='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')
+2023-11-22 19:41:27,364 - Load an existing unified_input_PACS.json
+2023-11-22 19:41:31,039 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: elephant
+Confidence Score: 0.95
+Reasoning: The image depicts an animal with a large, trunk-like feature and large ears, which are characteristics commonly associated with elephants.
+---END FORMAT TEMPLATE---
+2023-11-22 19:41:31,040 - predicted_class: elephant
+2023-11-22 19:41:33,034 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: giraffe
+Confidence Score: 0.85
+Reasoning: The image features a long neck and small ossicones, which are characteristic of a giraffe.
+---END FORMAT TEMPLATE---
+2023-11-22 19:41:33,035 - predicted_class: giraffe
+2023-11-22 19:41:36,299 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: dog
+Confidence Score: 1
+Reasoning: The image shows a quadrupedal animal with a shape and proportions that are indicative of a canine. It has a prominent snout, erect ears, and a tail - features commonly associated with dogs. The silhouette does not match the long neck of a giraffe or the large body and trunk of an elephant.
+---END FORMAT TEMPLATE---
+2023-11-22 19:41:36,300 - predicted_class: dog
+2023-11-22 19:41:36,301 - saving results into exp_output/2023-11-22-19_18_50/failure_1/PACS/results_gpt-4-vision-preview.json
