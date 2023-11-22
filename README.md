@@ -106,7 +106,7 @@ The pipeline is depicted in the following diagram:
 First, we evaluate the CLIP model on the VLCS dataset using the following command:
 
 ```bash
-python ./eval/eval_clip.py --dataset VLCS --num_sample 50
+python ./evaluation/eval_clip.py --dataset VLCS --num_sample 50
 ```
 
 During this process, the following files are generated in sequence:
@@ -121,7 +121,7 @@ Next, we continue with the evaluation of the LLaVA model, building upon the resu
 
 ```bash
 # Evaluate LLaVA based on the previous CLIP evaluation
-CUDA_VISIBLE_DEVICES=0,1 python ./eval/eval_llava.py --dataset PACS --continue_dir=exp_output/2023-11-18-21_08_16
+CUDA_VISIBLE_DEVICES=0,1 python ./evaluation/eval_llava.py --dataset PACS --continue_dir=exp_output/2023-11-18-21_08_16
 ```
 
 This step results in the creation of the following files, in order:
@@ -145,7 +145,7 @@ To conduct the evaluation, follow these steps:
 To evaluate the CLIP model on the PACS and VLCS datasets:
 
 ```bash
-python ./eval/eval_clip.py --dataset PACS VLCS --num_sample 50
+python ./evaluation/eval_clip.py --dataset PACS VLCS --num_sample 50
 ```
 
 This command evaluates the CLIP model on both PACS and VLCS datasets, processing 50 samples from each.
@@ -157,7 +157,7 @@ This command evaluates the CLIP model on both PACS and VLCS datasets, processing
 To evaluate the LLaVA model (the exact model loaded can be found `parser.add_argument('--model_name', 'type'='str', 'choices'=['llava-v1.5-7b', 'llava-v1.5-13b'], 'default'="llava-v1.5-13b")`):
 
 ```bash
-CUDA_VISIBLE_DEVICES=0,1 python ./eval/eval_llava.py --num_sample 1
+CUDA_VISIBLE_DEVICES=0,1 python ./evaluation/eval_llava.py --num_sample 1
 ```
 
 This command evaluates the LLaVA model, limiting the evaluation to 1 sample per dataset.
@@ -169,7 +169,7 @@ This command evaluates the LLaVA model, limiting the evaluation to 1 sample per 
 To continue the evaluation with LLaVA based on the samples selected from CLIP:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0,1 python ./eval/eval_llava.py --dataset PACS --continue_dir=<path_to_clip_results>
+CUDA_VISIBLE_DEVICES=0,1 python ./evaluation/eval_llava.py --dataset PACS --continue_dir=<path_to_clip_results>
 ```
 
 Replace `<path_to_clip_results>` with the directory path where the CLIP results are stored. This command continues the LLaVA evaluation using the CLIP model's results as a starting point, for a quick and fair comparion between two models.
@@ -179,7 +179,7 @@ Replace `<path_to_clip_results>` with the directory path where the CLIP results 
 
 ```bash
 export OPENAI_API_KEY="your-openai-api"
-python eval/eval_gpt-4v.py --num_sample 1
+python evaluation/eval_gpt-4v.py --num_sample 1
 ```
 
 The outpur directory example can be find in the [repository](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/tree/master/exp_output/2023-11-18-22_50_14):
