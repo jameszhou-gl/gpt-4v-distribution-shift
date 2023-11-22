@@ -199,6 +199,8 @@ This example demonstrates how to conduct a complete evaluation of three differen
 1. First, run the evaluation for the CLIP model. This step will generate and save random samples (named **PACS**) in the specified output directory.
 2. Next, evaluate the LLaVA model using the samples generated from the CLIP model evaluation. Set the `--continue_dir` argument to the output directory in CLIP.
 
+We run `bash evaluation/clip_llava_eval_pipeline.sh`
+
 Use [clip_llava_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/clip_llava_eval_pipeline.sh)
 
 ```bash
@@ -235,6 +237,8 @@ Finally, evaluate the GPT-4V model based on two criteria:
 2. **Random Samples**: Evaluate GPT-4V on random samples saved in `exp_output/2023-11-22-19_18_50`.
 
 ​       randomly choose NUM_FAILURE samples in from random samples in CLIP
+
+We run `bash evaluation/gpt-4v_eval_pipeline.sh`
 
 Use [gpt-4v_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/gpt-4v_eval_pipeline.sh):
 
