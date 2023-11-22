@@ -197,7 +197,7 @@ This example demonstrates how to conduct a complete evaluation of three differen
 #### Step 1: Evaluate the CLIP Model and LLaVA Model
 
 1. First, run the evaluation for the CLIP model. This step will generate and save random samples (named **PACS**) in the specified output directory.
-2. Next, evaluate the LLaVA model using the samples generated from the CLIP model evaluation. Set the `--continue_dir` argument to the output directory from Step 1.
+2. Next, evaluate the LLaVA model using the samples generated from the CLIP model evaluation. Set the `--continue_dir` argument to the output directory in CLIP.
 
 Use [clip_llava_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/clip_llava_eval_pipeline.sh)
 
