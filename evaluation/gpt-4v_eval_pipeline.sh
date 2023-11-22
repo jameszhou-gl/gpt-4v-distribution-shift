@@ -2,13 +2,12 @@
 
 # This script runs the GPT-4V evaluation pipeline. It prepares the evaluation,
 # then runs the GPT-4V scenario runner with different scenarios and API keys.
-
+# ! Specify
 # Directory where the output of the CLIP and LLaVA models is stored
-CONTINUE_DIR="exp_output/debug"
-
+CONTINUE_DIR="exp_output/2023-11-22-19_18_50"
 # Number of random and failure cases to prepare for GPT-4V evaluation
-NUM_RAND=20
-NUM_FAILURE=20
+NUM_RAND=20 # 180 in default
+NUM_FAILURE=20 # 180 in default
 
 # Prepare the GPT-4V evaluation dataset
 echo "Preparing GPT-4V evaluation dataset..."
