@@ -15,7 +15,7 @@ def setup(args):
     if args.output_dir[-6:] in 'exp_output':
         current_time = datetime.now().strftime('%Y-%m-%d-%H_%M_%S')
         args.output_dir = f"{args.output_dir}/{current_time}"
-    os.makedirs(args.output_dir)
+        os.makedirs(args.output_dir)
     logger = setup_logging(args.output_dir)
     logger.info(args)
     return logger

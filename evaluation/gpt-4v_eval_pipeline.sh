@@ -9,6 +9,9 @@ CONTINUE_DIR="exp_output/2023-11-22-19_18_50"
 NUM_RAND=20 # 180 in default
 NUM_FAILURE=20 # 180 in default
 
+# Copy the bash script to the new output directory
+cp evaluation/gpt-4v_eval_pipeline.sh "$CONTINUE_DIR"
+
 # Prepare the GPT-4V evaluation dataset
 echo "Preparing GPT-4V evaluation dataset..."
 python evaluation/prepare_gpt4v_evaluation.py --num_rand $NUM_RAND --num_failure $NUM_FAILURE --continue_dir $CONTINUE_DIR

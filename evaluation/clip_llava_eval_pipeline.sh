@@ -2,7 +2,7 @@
 
 # ! Specify the dataset and the number of samples
 dataset="PACS"
-num_sample=5 # 20 in default
+num_sample=200 # 20 in default
 
 # Get the current timestamp
 current_time=$(date +"%Y-%m-%d-%H_%M_%S")
@@ -10,6 +10,12 @@ current_time=$(date +"%Y-%m-%d-%H_%M_%S")
 # Define the base output directory
 base_output_dir="./exp_output"
 timestamped_output_dir="${base_output_dir}/${current_time}"
+
+# Create the timestamped output directory
+mkdir -p "$timestamped_output_dir"
+
+# Copy the bash script to the new output directory
+cp ./evaluation/clip_llava_eval_pipeline.sh "$timestamped_output_dir"
 
 # Run the CLIP evaluation script with the new output directory
 python ./evaluation/eval_clip.py --dataset $dataset --output_dir "$timestamped_output_dir" --num_sample $num_sample --save_samples
