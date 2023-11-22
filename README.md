@@ -185,3 +185,101 @@ python evaluation/eval_gpt-4v.py --num_sample 1
 The outpur directory example can be find in the [repository](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/tree/master/exp_output/2023-11-18-22_50_14):
 
 ![](https://p.ipic.vip/28l01k.png)
+
+
+
+---
+
+### Comprehensive Evaluation Example for Three Models on a Specific Dataset
+
+This example demonstrates how to conduct a complete evaluation of three different models (CLIP, LLaVA, and GPT-4V) on the PACS dataset. Follow these steps to replicate the evaluation process:
+
+#### Step 1: Evaluate the CLIP Model and LLaVA Model
+
+1. First, run the evaluation for the CLIP model. This step will generate and save random samples (named **PACS**) in the specified output directory.
+2. Next, evaluate the LLaVA model using the samples generated from the CLIP model evaluation. Set the `--continue_dir` argument to the output directory from Step 1.
+
+Use [clip_llava_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/clip_llava_eval_pipeline.sh)
+
+```bash
+#!/bin/bash
+
+# ! Specify the dataset and the number of samples
+dataset="PACS"
+num_sample=5 # 20 in default
+
+# Get the current timestamp
+current_time=$(date +"%Y-%m-%d-%H_%M_%S")
+
+# Define the base output directory
+base_output_dir="./exp_output"
+timestamped_output_dir="${base_output_dir}/${current_time}"
+
+# Run the CLIP evaluation script with the new output directory
+python ./evaluation/eval_clip.py --dataset $dataset --output_dir "$timestamped_output_dir" --num_sample $num_sample --save_samples
+
+# Evaluate LLaVA model using CLIP's samples
+CUDA_VISIBLE_DEVICES=0,1 python ./evaluation/eval_llava.py --dataset $dataset --continue_dir="$timestamped_output_dir"
+```
+
+Ï
+
+#### Step 2: Evaluate the GPT-4V Model in Two Scenarios
+
+Finally, evaluate the GPT-4V model based on two criteria:
+
+1. **Failure Cases in CLIP**: Evaluate GPT-4V on the cases where the CLIP model failed.
+
+   randomly choose NUM_RAND failure samples in CLIP
+
+2. **Random Samples**: Evaluate GPT-4V on random samples saved in `exp_output/2023-11-22-19_18_50`.
+
+​       randomly choose NUM_FAILURE samples in from random samples in CLIP
+
+Use [gpt-4v_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/gpt-4v_eval_pipeline.sh):
+
+```bash
+#!/bin/bash
+
+# This script runs the GPT-4V evaluation pipeline. It prepares the evaluation,
+# then runs the GPT-4V scenario runner with different scenarios and API keys.
+# ! Specify
+# Directory where the output of the CLIP and LLaVA models is stored
+CONTINUE_DIR="exp_output/2023-11-22-19_18_50"
+# Number of random and failure cases to prepare for GPT-4V evaluation
+NUM_RAND=20 # 180 in default
+NUM_FAILURE=20 # 180 in default
+
+# Prepare the GPT-4V evaluation dataset
+echo "Preparing GPT-4V evaluation dataset..."
+python evaluation/prepare_gpt4v_evaluation.py --num_rand $NUM_RAND --num_failure $NUM_FAILURE --continue_dir $CONTINUE_DIR
+
+# Run GPT-4V evaluation for different scenarios
+# Scenario 1: Failure cases, Part 1
+echo "Running GPT-4V evaluation for Failure Scenario 1..."
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name failure_1 --openai_api_key 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
+
+# Scenario 2: Failure cases, Part 2
+echo "Running GPT-4V evaluation for Failure Scenario 2..."
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name failure_2 --openai_api_key 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
+
+# Scenario 3: Random cases, Part 1
+echo "Running GPT-4V evaluation for Random Scenario 1..."
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_1 --openai_api_key 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
+
+# Scenario 4: Random cases, Part 2
+echo "Running GPT-4V evaluation for Random Scenario 2..."
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_2 --openai_api_key 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
+
+echo "GPT-4V evaluation pipeline completed."
+
+```
+
+The result directory can be found at [the repository](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/tree/master/exp_output/2023-11-22-19_18_50)
+
+You would find the results_model-name_failure.json and results_model-name_random.json for each of clip, llava, gpt-4v.
+
+
+
+![](https://p.ipic.vip/i454ez.png)
+
