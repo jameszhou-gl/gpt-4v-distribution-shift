@@ -5,7 +5,7 @@ import argparse
 import requests
 import json
 from tqdm import tqdm
-from evaluation..utils import setup_logging, analyse_unified_output
+from evaluation.utils import setup_logging, analyse_unified_output
 from datetime import datetime
 from data.random_sampler import gen_sample_json
 
