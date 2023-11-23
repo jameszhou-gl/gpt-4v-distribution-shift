@@ -15,7 +15,7 @@
 
 
 
-#### Experiments
+### V1 Experiments
 
 |                           Dataset                            | Subjects |   Task Types   |   Shift Types   |
 | :----------------------------------------------------------: | :------: | :------------: | :-------------: |
@@ -24,29 +24,24 @@
 |                          OfficeHome                          | Natural  | Classification | Diversity Type? |
 |                          DomainNet                           | Natural  | Classification |                 |
 |                       Terra Incognita                        | Natural  | Classification |                 |
-|                                                              |          |                |                 |
+|                           iWildCam-WILDS                     | Natural  | Classification |                 |
+|                         Camelyon17-WILDS                     | Medical  | Classification |                 |
+|                         COVID-19-x-ray                       | Medical  | Classification |                 |
+|                          HAM10000                            | Medical  | Classification |                 |
+|                         NIH-Chest-X-ray-14                   | Medical  | Classification |                 |
+|                         DrugOOD-Scaffold                     | Molecular| Classification |                 |
+|                         DrugOOD-Assay                        | Molecular| Classification |                 |
+|                           FMoW-WILDS                         | Satellite| Classification |                 |
+
+
+
+
+
+### V2 Experiments
+|                           Dataset                            | Subjects |   Task Types   |   Shift Types   |
+| :----------------------------------------------------------: | :------: | :------------: | :-------------: |
 |            [ImageNetv2](https://imagenetv2.org/)             | Natural  | Classification |                 |
 | [ImageNet-R](https://paperswithcode.com/dataset/imagenet-r)  | Natural  | Classification |                 |
 | [ImageNet Sketch](https://github.com/HaohanWang/ImageNet-Sketch) | Natural  | Classification |                 |
 | [ImageNet-A](https://paperswithcode.com/dataset/imagenet-a)  | Natural  | Classification |                 |
-|                         DrugOOD-Scaffold                     | Molecular| Classification |                 |
-|                         DrugOOD-Assay                        | Molecular| Classification |                 |
-| [Camelyon17-WILDS](https://pan.baidu.com/s/1mIzSewImtEisclPtTHGSyw) | Medical  | Classification |                 |
-| [Camelyon16](https://pan.baidu.com/s/1UW_HLXXjjw5hUvBIUYPgbA)| Medical  | Classification |                 |
-| [TCGA](https://portal.gdc.cancer.gov/)                       | Medical  | Classification |                 |
-|                           iWildCam-WILDS                     | Natural  | Classification |                 |
-|        [RxRx1-WILDS](https://www.rxrx.ai/rxrx1)              | Biology  | Classification |                 |
-|        [IXI](http://brain-development.org/ixi-dataset/)      | Medical  | Classification |                 |
-|                           FMoW-WILDS                         | Natural  |                |                 |
-|                           PovertyMap-WILDS                   | Natural  |                |                 |
-|                           GlobalWheat-WILDS                  | Natural  |                |                 |
-|                           OGB-MolPCBA-WILDS                  | Molecular|                |                 |
-|[BraTS](https://www.kaggle.com/datasets/dschettler8845/brats-2021-task1) | Medical  | segmentation |                 |
-|[MM-WHS](https://mega.nz/folder/UNMF2YYI#1cqJVzo4p_wESv9P_pc8uA)| Medical|  segmentation  |                 |
-|                             Todo                             | Natural  |   Regression   |                 |
-|                                                              |          |                |                 |
-|                                                              |          |                |                 |
-|                                                              |          |                |                 |
-|                                                              |          |                |                 |
-|                                                              |          |                |                 |
-
+ 
