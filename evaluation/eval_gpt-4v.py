@@ -68,6 +68,42 @@ def setup(args):
     return logger
 
 
+def search_pred_info(item_id, answer_by_gpt, class_names):
+    predicted_class = None
+    for class_name in class_names:
+        # Pattern to match 'Answer Choice: [class_name]' or 'Answer Choice: class_name' (case-insensitive)
+        pattern = re.compile(
+            r"Answer Choice:\s*(?:\[)?'?\"?" +
+            re.escape(class_name) + r"'?\"?(?:\])?",
+            re.IGNORECASE
+        )
+        if pattern.search(answer_by_gpt):
+            predicted_class = class_name
+            break
+    if not predicted_class:
+        logger.warning(
+            'Query failed for item {}; Check the answer or the pattern matching carefully!'.format(item_id))
+    # Regular expression patterns to extract Confidence Score (0~1) and Reasoning
+    confidence_score_pattern = r'Confidence Score:\s*([0-9]*\.?[0-9]+)'
+    reasoning_pattern = r'Reasoning:\s*(.+)'
+
+    # Extract Confidence Score
+    confidence_score_match = re.search(
+        confidence_score_pattern, answer_by_gpt, re.DOTALL)
+    if confidence_score_match:
+        confidence_score = confidence_score_match.group(1).strip()
+    else:
+        confidence_score = None
+
+    # Extract Reasoning
+    reasoning_match = re.search(reasoning_pattern, answer_by_gpt, re.DOTALL)
+    if reasoning_match:
+        reasoning = reasoning_match.group(1).strip()
+    else:
+        reasoning = None
+    return predicted_class, confidence_score, reasoning
+
+
 def main(args):
     api_key = args.openai_api_key
     if not api_key:
@@ -103,34 +139,38 @@ def main(args):
                 args.data_dir, each_dataset, item['image'])
             response = get_gpt_response(
                 image_path=image_path, prompt=prompt, api_key=api_key).json()
-            response.update(
-                {'image_path': image_path})
+            # response.update(
+            #     {'image_path': image_path})
             # logger.info(f'response: {response}')
             if 'error' in response:
                 logger.warning(f'{args.model_name} returns server error')
             else:
-                answer_str = response['choices'][0]['message']['content']
-                logger.info(f'answer by gpt-4v:\n{answer_str}')
-                predicted_class = None
-                for class_name in class_names:
-                    pattern = re.compile(
-                        f'Answer Choice: {class_name}', re.IGNORECASE)
-                    if pattern.search(answer_str):
-                        # if f'Answer Choice: {class_name}' in answer_str:
-                        predicted_class = class_name
-                        break
+                answer_by_gpt = response['choices'][0]['message']['content']
+                logger.info(f'answer by gpt-4v:\n{answer_by_gpt}')
+                predicted_class, confidence_score, reasoning = search_pred_info(
+                    item_id, answer_by_gpt, class_names)
+                # predicted_class = None
+                # for class_name in class_names:
+                #     pattern = re.compile(
+                #         f'Answer Choice: {class_name}', re.IGNORECASE)
+                #     if pattern.search(answer_by_gpt):
+                #         # if f'Answer Choice: {class_name}' in answer_by_gpt:
+                #         predicted_class = class_name
+                #         break
                 if not predicted_class:
-                    logger.info('query failed')
+                    # logger.info('query failed')
                     continue
                 logger.info(f'predicted_class: {predicted_class}')
                 # pred_class_id = dataset.class_to_idx[pred_class_name]
-                response.update({'predicted_class': predicted_class})
+                # response.update({'predicted_class': predicted_class})
                 # Store unified output jsonl
                 unified_output['dataset'] = each_dataset
                 unified_output['domain'] = item['domain']
                 unified_output['subject'] = item['subject']
                 unified_output['true_class'] = item['class']
                 unified_output['predicted_class'] = predicted_class
+                unified_output['confidence_score'] = confidence_score
+                unified_output['reasoning'] = reasoning
                 unified_output['image'] = item['image']
                 unified_output['id'] = item_id
                 mode = 'w' if first_flag else 'a'
