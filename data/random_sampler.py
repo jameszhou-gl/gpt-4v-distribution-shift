@@ -45,10 +45,6 @@ def gen_sample_json(dataset='PACS', args=None):
         if os.path.exists(domain_path) and os.path.isdir(domain_path):
             for class_id, class_name in enumerate(selected_images_info['class_names']):
                 class_path = os.path.join(domain_path, class_name)
-
-                # Create the directory if it does not exist
-                if not os.path.exists(class_path):
-                    os.makedirs(class_path)
                 
                 # Check if the path exists and is a directory
                 if os.path.exists(class_path) and os.path.isdir(class_path):
