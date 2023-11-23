@@ -1,0 +1,13 @@
+2023-11-22 19:18:54,689 - Saving in ./exp_output/2023-11-22-19_18_50
+2023-11-22 19:18:54,689 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset='PACS', output_dir='./exp_output/2023-11-22-19_18_50', num_sample=5, model_name='clip-vit-base-patch16', save_samples=True)
+2023-11-22 19:19:01,575 - sampling data examples in PACS, and writing into unified_input_PACS.json
+2023-11-22 19:19:01,576 - Processing PACS: 4 domains, 7 classes
+2023-11-22 19:19:01,647 - save the sampled data into ./exp_output/2023-11-22-19_18_50
+2023-11-22 19:19:13,015 - CLIPModel processes completed.
+2023-11-22 19:19:13,018 - saving results into ./exp_output/2023-11-22-19_18_50/results_clip-vit-base-patch16.json
+2023-11-22 19:19:15,098 - Saving in ./exp_output/2023-11-22-19_18_50
+2023-11-22 19:19:15,098 - Run an experiment continuing from an existing directory
+2023-11-22 19:19:15,098 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset=['PACS'], output_dir='./exp_output/2023-11-22-19_18_50', num_sample=20, model_name='llava-v1.5-13b', continue_dir='./exp_output/2023-11-22-19_18_50', save_samples=False)
+2023-11-22 19:19:15,099 - Load an existing unified_input_PACS.json
+2023-11-22 19:19:15,099 - Convert the unified input format into llava vqa format
+2023-11-22 19:36:33,412 - saving results into ./exp_output/2023-11-22-19_18_50/results_llava-v1.5-13b.json

@@ -1,0 +1,78 @@
+{
+    "dataset": "PACS",
+    "domains": [
+        "cartoon",
+        "photo",
+        "sketch",
+        "art_painting"
+    ],
+    "class_names": [
+        "dog",
+        "person",
+        "giraffe",
+        "horse",
+        "guitar"
+    ],
+    "samples": {
+        "0": {
+            "domain": "cartoon",
+            "class": "guitar",
+            "image": "cartoon/guitar/pic_116.jpg",
+            "subject": "nature"
+        },
+        "1": {
+            "domain": "art_painting",
+            "class": "guitar",
+            "image": "art_painting/guitar/pic_076.jpg",
+            "subject": "nature"
+        },
+        "2": {
+            "domain": "sketch",
+            "class": "horse",
+            "image": "sketch/horse/n02374451_2825-1.png",
+            "subject": "nature"
+        },
+        "3": {
+            "domain": "sketch",
+            "class": "dog",
+            "image": "sketch/dog/5358.png",
+            "subject": "nature"
+        },
+        "4": {
+            "domain": "art_painting",
+            "class": "giraffe",
+            "image": "art_painting/giraffe/pic_158.jpg",
+            "subject": "nature"
+        },
+        "5": {
+            "domain": "art_painting",
+            "class": "horse",
+            "image": "art_painting/horse/pic_168.jpg",
+            "subject": "nature"
+        },
+        "6": {
+            "domain": "art_painting",
+            "class": "guitar",
+            "image": "art_painting/guitar/pic_106.jpg",
+            "subject": "nature"
+        },
+        "7": {
+            "domain": "photo",
+            "class": "giraffe",
+            "image": "photo/giraffe/n02439033_14184.jpg",
+            "subject": "nature"
+        },
+        "8": {
+            "domain": "art_painting",
+            "class": "guitar",
+            "image": "art_painting/guitar/pic_145.jpg",
+            "subject": "nature"
+        },
+        "9": {
+            "domain": "art_painting",
+            "class": "person",
+            "image": "art_painting/person/pic_003.jpg",
+            "subject": "nature"
+        }
+    }
+}

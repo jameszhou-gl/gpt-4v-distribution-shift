@@ -1,0 +1,75 @@
+2023-11-22 19:41:56,614 - Saving in exp_output/2023-11-22-19_18_50/random_1/PACS
+2023-11-22 19:41:56,615 - Run an experiment continuing from an existing directory
+2023-11-22 19:41:56,615 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset=['PACS'], output_dir='exp_output/2023-11-22-19_18_50/random_1/PACS', num_sample=20, model_name='gpt-4-vision-preview', continue_dir='exp_output/2023-11-22-19_18_50/random_1/PACS', save_samples=False, openai_api_key='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')
+2023-11-22 19:41:56,615 - Load an existing unified_input_PACS.json
+2023-11-22 19:41:59,853 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: giraffe
+Confidence Score: 1
+Reasoning: The image depicts an animated character that is styled to resemble a giraffe, as indicated by the long neck, spots, and ossicone-like features on top of its head.
+---END FORMAT TEMPLATE---
+2023-11-22 19:41:59,854 - predicted_class: giraffe
+2023-11-22 19:42:02,073 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: horse
+Confidence Score: 1
+Reasoning: The image clearly shows a horse with a saddle on it, resting on the ground.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:02,073 - predicted_class: horse
+2023-11-22 19:42:05,156 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: dog
+Confidence Score: 1
+Reasoning: The image clearly shows the close-up of a dog with distinct features such as fur, canine teeth, and a tongue, which matches the physical characteristics of a typical dog.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:05,157 - predicted_class: dog
+2023-11-22 19:42:08,365 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: house
+Confidence Score: 1
+Reasoning: The image clearly shows a residential structure typically identified as a house, with visible features such as windows, doors, and a roof that are characteristic of a house.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:08,365 - predicted_class: house
+2023-11-22 19:42:10,807 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: house
+Confidence Score: 1
+Reasoning: The image depicts a painting of a building that appears to be a house, with distinct features such as a door, windows, and a roof that are typically associated with a house.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:10,807 - predicted_class: house
+2023-11-22 19:42:13,172 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: house
+Confidence Score: 1
+Reasoning: The image clearly displays a small two-story residential structure with windows, doors, and a roof, which is commonly recognized as a house.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:13,172 - predicted_class: house
+2023-11-22 19:42:15,232 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: dog
+Confidence Score: 1
+Reasoning: The image clearly depicts a dog, as evidenced by its distinctive features such as the shape of the ears, snout, and body which are characteristic of a dog.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:15,232 - predicted_class: dog
+2023-11-22 19:42:23,289 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: dog
+Confidence Score: 1
+Reasoning: The image depicts an animal with characteristics that are typical of a dog, such as a snout, floppy ears, and a body shape consistent with common dog breeds.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:23,290 - predicted_class: dog
+2023-11-22 19:42:25,358 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: horse
+Confidence Score: 1
+Reasoning: The image clearly depicts an illustrated horse, based on its distinctive body shape, mane, tail, and hooves.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:25,359 - predicted_class: horse
+2023-11-22 19:42:29,800 - answer by gpt-4v:
+---BEGIN FORMAT TEMPLATE---
+Answer Choice: dog
+Confidence Score: 1
+Reasoning: The image clearly depicts a cartoon representation of a dog with characteristic features such as a snout, ears, and tail.
+---END FORMAT TEMPLATE---
+2023-11-22 19:42:29,800 - predicted_class: dog
+2023-11-22 19:42:29,803 - saving results into exp_output/2023-11-22-19_18_50/random_1/PACS/results_gpt-4-vision-preview.json

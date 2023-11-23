@@ -1,0 +1,31 @@
+{
+    "dataset": "PACS",
+    "domains": [
+        "sketch"
+    ],
+    "class_names": [
+        "dog",
+        "elephant",
+        "giraffe"
+    ],
+    "samples": {
+        "0": {
+            "domain": "sketch",
+            "class": "elephant",
+            "image": "sketch/elephant/n02503517_10778-3.png",
+            "subject": "nature"
+        },
+        "1": {
+            "domain": "sketch",
+            "class": "giraffe",
+            "image": "sketch/giraffe/n02439033_14322-3.png",
+            "subject": "nature"
+        },
+        "2": {
+            "domain": "sketch",
+            "class": "dog",
+            "image": "sketch/dog/n02106662_10406-2.png",
+            "subject": "nature"
+        }
+    }
+}

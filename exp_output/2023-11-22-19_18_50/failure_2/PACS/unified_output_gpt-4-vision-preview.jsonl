@@ -1,0 +1,3 @@
+{"dataset": "PACS", "domain": "sketch", "subject": "nature", "true_class": "dog", "predicted_class": "dog", "image": "sketch/dog/n02106662_8870-7.png", "id": "0"}
+{"dataset": "PACS", "domain": "sketch", "subject": "nature", "true_class": "giraffe", "predicted_class": "giraffe", "image": "sketch/giraffe/n02439033_15936-5.png", "id": "1"}
+{"dataset": "PACS", "domain": "sketch", "subject": "nature", "true_class": "dog", "predicted_class": "dog", "image": "sketch/dog/5358.png", "id": "2"}

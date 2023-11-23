@@ -1,0 +1,80 @@
+{
+    "overall_accuracy": 1.0,
+    "datasets": {
+        "PACS": {
+            "total": 10,
+            "correct": 10,
+            "domains": {
+                "cartoon": {
+                    "total": 1,
+                    "correct": 1,
+                    "classes": {
+                        "guitar": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 1.0
+                },
+                "art_painting": {
+                    "total": 6,
+                    "correct": 6,
+                    "classes": {
+                        "guitar": {
+                            "total": 3,
+                            "correct": 3,
+                            "accuracy": 1.0
+                        },
+                        "giraffe": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "horse": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "person": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 1.0
+                },
+                "sketch": {
+                    "total": 2,
+                    "correct": 2,
+                    "classes": {
+                        "horse": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "dog": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 1.0
+                },
+                "photo": {
+                    "total": 1,
+                    "correct": 1,
+                    "classes": {
+                        "giraffe": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 1.0
+                }
+            },
+            "accuracy": 1.0
+        }
+    }
+}

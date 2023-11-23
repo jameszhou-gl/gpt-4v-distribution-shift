@@ -1,0 +1,34 @@
+{
+    "overall_accuracy": 0.6666666666666666,
+    "datasets": {
+        "PACS": {
+            "total": 6,
+            "correct": 4,
+            "domains": {
+                "sketch": {
+                    "total": 6,
+                    "correct": 4,
+                    "classes": {
+                        "elephant": {
+                            "total": 1,
+                            "correct": 1,
+                            "accuracy": 1.0
+                        },
+                        "giraffe": {
+                            "total": 2,
+                            "correct": 0,
+                            "accuracy": 0.0
+                        },
+                        "dog": {
+                            "total": 3,
+                            "correct": 3,
+                            "accuracy": 1.0
+                        }
+                    },
+                    "accuracy": 0.6666666666666666
+                }
+            },
+            "accuracy": 0.6666666666666666
+        }
+    }
+}
