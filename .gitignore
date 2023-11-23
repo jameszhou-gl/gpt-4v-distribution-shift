@@ -3,6 +3,7 @@
 output.*.txt
 *.pyc
 exp_output/*
+tmp/*
 del_*.py
 gpt_4v_distribution_shift.egg-info
 __pycache__
