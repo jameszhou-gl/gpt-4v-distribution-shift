@@ -131,7 +131,6 @@ if '__main__' == __name__:
 
     opt = parser.parse_args()
 
-    # 使用示例
     input_folder = '/root/hrd_pg/gpt-4v-distribution-shift/exp_output/2023-11-28-17_04_45/officehome'
     output_folder = '/root/hrd_pg/gpt-4v-distribution-shift/exp_output/2023-11-28-17_04_45/officehome_unseen'
 
