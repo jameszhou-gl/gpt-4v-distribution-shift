@@ -89,6 +89,65 @@ domain_net
 └── sketch
 ```
 
+#### COVID
+
+```bash
+domain_net
+├── source
+  ├── normal
+  ├── pneumonia
+├── target
+  ├── normal
+  ├── pneumonia
+  ├── COVID19
+```
+
+#### DrugOOD_assay
+
+```bash
+DrugOOD_assay
+├── domain01
+  ├── inactive
+  ├── active
+├── ...
+└── domain80
+```
+#### DrugOOD_scaffold
+
+```bash
+DrugOOD_scaffold
+├── domain01
+  ├── inactive
+  ├── active
+├── ...
+└── domain12542
+```
+
+#### PACS_gaussion
+
+```bash
+PACS_gaussion
+├── art_painting
+  ├── dog
+  ├── elephant
+  ├── ...
+├── cartoon
+├── photo
+└── sketch
+```
+
+#### PACS_unseen
+
+```bash
+PACS_unseen
+├── art_painting
+  ├── dog
+  ├── elephant
+  ├── ...
+├── cartoon
+├── photo
+└── sketch
+```
 
 
 ### Datasets in [CLIP](https://arxiv.org/pdf/2103.00020.pdf)
