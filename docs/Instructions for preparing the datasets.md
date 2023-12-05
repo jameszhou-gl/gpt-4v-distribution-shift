@@ -103,7 +103,7 @@ domain_net
 ```
 
 #### DrugOOD_assay
-run To_image_assay.py with drugood_assay.txt to get DrugOOD_assay
+run To_image_assay.py with drugood_assay.txt in data to get DrugOOD_assay
 ```bash
 DrugOOD_assay
 ├── domain01
@@ -113,7 +113,7 @@ DrugOOD_assay
 └── domain80
 ```
 #### DrugOOD_scaffold
-
+run To_image_scaffold.py with drugood_assay.txt in data to get DrugOOD_scaffold
 ```bash
 DrugOOD_scaffold
 ├── domain01
@@ -124,7 +124,7 @@ DrugOOD_scaffold
 ```
 
 #### PACS_gaussion
-
+run add_gaussion.py in data to get PACS_gaussion
 ```bash
 PACS_gaussion
 ├── art_painting
@@ -137,7 +137,7 @@ PACS_gaussion
 ```
 
 #### PACS_unseen
-
+run gradio_seg2imag_offline.py in data with [ControlNet](https://github.com/lllyasviel/ControlNet-v1-1-nightly) to get PACS_unseen
 ```bash
 PACS_unseen
 ├── art_painting
