@@ -103,7 +103,7 @@ domain_net
 ```
 
 #### DrugOOD_assay
-
+run To_image_assay.py with drugood_assay.txt to get DrugOOD_assay
 ```bash
 DrugOOD_assay
 ├── domain01
