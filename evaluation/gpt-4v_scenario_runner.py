@@ -56,7 +56,7 @@ if __name__ == '__main__':
     parser.add_argument('--continue_dir', type=str, required=True,
                         help='Directory containing the CLIP sample sets, e.g., "exp_output/2023-11-18-19_56_06".')
     parser.add_argument('--scenario_name', type=str, required=True,
-                        choices=['failure_1', 'failure_2', 'random_1', 'random_2'])
+                        choices=['failure_1', 'failure_2', 'random_1', 'random_2', 'random_3', 'random_4'])
     parser.add_argument('--openai_api_key', type=str, required=True)
 
     args = parser.parse_args()
@@ -74,12 +74,14 @@ if __name__ == '__main__':
     subprocess.run(eval_gpt4v_single)
 
     # Combine and analyze results for the final scenarios
-    if args.scenario_name in ['failure_2', 'random_2']:
+    if args.scenario_name in ['random_4']:
         scenario_type = 'failure' if args.scenario_name.startswith(
             'failure') else 'random'
         file_paths = [
             f'{args.continue_dir}/{scenario_type}_1/{dataset}/unified_output_{args.model_name}.jsonl',
-            f'{args.continue_dir}/{scenario_type}_2/{dataset}/unified_output_{args.model_name}.jsonl'
+            f'{args.continue_dir}/{scenario_type}_2/{dataset}/unified_output_{args.model_name}.jsonl',
+            f'{args.continue_dir}/{scenario_type}_3/{dataset}/unified_output_{args.model_name}.jsonl',
+            f'{args.continue_dir}/{scenario_type}_4/{dataset}/unified_output_{args.model_name}.jsonl'
         ]
         combined_data = combine_jsonl_files(file_paths)
         analyze_combined_result(
