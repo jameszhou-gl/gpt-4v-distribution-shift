@@ -52,11 +52,22 @@ def extract_random_samples(clip_results, k):
     return random.sample(clip_results, sample_size)
 
 
-def split_into_folds(cases, num_folds=2):
+def split_into_folds(cases, num_folds=4):
     """ Split cases into the specified number of folds. """
-    fold_size = len(cases) // num_folds
-    return [cases[i * fold_size:(i + 1) * fold_size] for i in range(num_folds)]
+    # fold_size = len(cases) // num_folds
+    # return [cases[i * fold_size:(i + 1) * fold_size] for i in range(num_folds)]
+    total_cases = len(cases)
+    fold_size = total_cases // num_folds
+    remainder = total_cases % num_folds
+    folds = []
 
+    start_index = 0
+    for i in range(num_folds):
+        end_index = start_index + fold_size + (1 if i < remainder else 0)
+        folds.append(cases[start_index:end_index])
+        start_index = end_index
+
+    return folds
 
 def create_directories_and_copy_files(cases, base_dir, fold_name):
     """ Create directories for each fold and copy files into them. """
@@ -180,7 +191,7 @@ if __name__ == '__main__':
                         choices=['clip-vit-base-patch16', 'clip-vit-base-patch32'], default="clip-vit-base-patch16")
     parser.add_argument('--llava_model', type=str,
                         choices=['llava-v1.5-7b', 'llava-v1.5-13b'], default="llava-v1.5-13b")
-    parser.add_argument('--num_rand', type=int, default=180,
+    parser.add_argument('--num_rand', type=int, default=1800,
                         help='Number of random samples to extract from CLIP results. Default is 180.')
     parser.add_argument('--num_failure', type=int, default=180,
                         help='Number of failure cases to extract from CLIP results. Default is 180.')
