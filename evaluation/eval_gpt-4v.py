@@ -148,6 +148,7 @@ def main(args):
             first_flag = True
             id_list = []
         server_error_num = 0
+        total_samples_count = len(data['samples'])
         remaining_samples_count = len(data['samples'])-len(id_list)
         if remaining_samples_count == 0:
             logger.info(
