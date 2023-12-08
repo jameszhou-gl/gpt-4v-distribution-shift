@@ -131,19 +131,51 @@ def main(args):
 
         Do not deviate from the above format. Repeat the format template for the answer.
         """
-        first_flag = True
+        output_file_path = os.path.join(
+            args.output_dir, f'unified_output_{args.model_name}.jsonl')
+        if os.path.exists(output_file_path):
+            logger.info(f'File already exists: {output_file_path}')
+            first_flag = False
+            id_list = []
+            with open(output_file_path, 'r') as file:
+                for line in file:
+                    # Convert each line to a JSON object
+                    jsonl_data = json.loads(line)
+                    # Extract the 'id' and add it to the list
+                    id_list.append(jsonl_data['id'])
+
+        else:
+            first_flag = True
+            id_list = []
+        server_error_num = 0
+        remaining_samples_count = len(data['samples'])-len(id_list)
+        if remaining_samples_count == 0:
+            logger.info(
+                f'All {total_samples_count} samples in unified_input_{each_dataset}.json have been '
+                f'processed. Exiting as there are no more samples to test with unified_output_{args.model_name}.jsonl.'
+            )
+            # Perform any necessary cleanup or finalization here
+            exit()
+        else:
+            logger.info(
+                f'Continuing testing: {remaining_samples_count} samples remaining.')
+
         for item_id, item in tqdm(data['samples'].items(), desc="Processing Samples"):
             # for item_id, item in tqdm(islice(data['samples'].items(), 5), desc="Processing Samples"):
+            if item_id in id_list:
+                continue
             unified_output = {}
             image_path = os.path.join(
                 args.data_dir, each_dataset, item['image'])
             response = get_gpt_response(
                 image_path=image_path, prompt=prompt, api_key=api_key).json()
-            # response.update(
-            #     {'image_path': image_path})
-            # logger.info(f'response: {response}')
             if 'error' in response:
                 logger.warning(f'{args.model_name} returns server error')
+                server_error_num += 1
+                if server_error_num == 20:
+                    logger.warning(
+                        'The server error reaches 20 times, terminating the code')
+                    exit()
             else:
                 answer_by_gpt = response['choices'][0]['message']['content']
                 logger.info(f'answer by gpt-4v:\n{answer_by_gpt}')
