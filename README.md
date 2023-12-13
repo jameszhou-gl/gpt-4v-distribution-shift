@@ -52,7 +52,7 @@ python ./data/process_wilds.py
 ```
 ### Supported Datasets
 
-Currently, the project supports the following datasets ([See detail here](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/data/dataset_info.json)):
+Currently, the project supports the following 13 datasets ([See detail here](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/data/dataset_info.json)):
 
 1. PACS
 2. VLCS
@@ -61,6 +61,12 @@ Currently, the project supports the following datasets ([See detail here](https:
 5. camelyon17_v1.0
 6. fmow_v1.1
 7. terra_incognita
+8. iwildcam_v2.0
+9. HAM10000
+10. NIH_Chest_X_ray_14
+11. drugood_assay
+12. drugood_scaffold
+13. Xray(COVID)
 
 ### Construct and Maintain a JSON File Storing Metadata for Each Dataset
 
@@ -287,3 +293,17 @@ You would find the results_model-name_failure.json and results_model-name_random
 
 ![](https://p.ipic.vip/i454ez.png)
 
+## Citation
+
+If you find our work useful in your research, please consider citing:
+
+```tex
+@misc{han2023does,
+title={How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary Investigation},
+author={Zhongyi Han and Guanglin Zhou and Rundong He and Jindong Wang and Xing Xie and Tailin Wu and Yilong Yin and Salman Khan and Lina Yao and Tongliang Liu and Kun Zhang},
+year={2023},
+eprint={2312.07424},
+archivePrefix={arXiv},
+primaryClass={cs.LG}
+}
+```
