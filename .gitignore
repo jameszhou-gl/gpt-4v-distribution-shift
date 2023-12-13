@@ -13,3 +13,4 @@ evaluation/eval_gpt-4v_multi-imgs.py
 !exp_output/2023-11-18-22_50_14/
 !exp_output/2023-11-22-19_18_50/
 data/del_debug_camelyon.ipynb
+*.pdf
