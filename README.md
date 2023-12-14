@@ -244,15 +244,15 @@ Finally, evaluate the GPT-4V model based on two criteria:
 
 1. **Failure Cases in CLIP**: Evaluate GPT-4V on the cases where the CLIP model failed.
 
-   randomly choose NUM_RAND failure samples in CLIP
+   randomly choose NUM_FAILURE failure samples in CLIP
 
 2. **Random Samples**: Evaluate GPT-4V on random samples saved in `exp_output/2023-11-22-19_18_50`.
 
-​       randomly choose NUM_FAILURE samples in from random samples in CLIP
+​       randomly choose NUM_RAND samples in from random samples in CLIP
 
-We run `bash evaluation/gpt-4v_eval_pipeline.sh`
+Note that we split the total 1800 cases into four parts due to current rate limit as 100 RPD in OpenAI API.
 
-Use [gpt-4v_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/gpt-4v_eval_pipeline.sh):
+We run `bash evaluation/gpt-4v_eval_pipeline.sh` using [gpt-4v_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/gpt-4v_eval_pipeline.sh):
 
 ```bash
 #!/bin/bash
