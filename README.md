@@ -28,8 +28,7 @@ Investigation](https://arxiv.org/pdf/2312.07424.pdf)".
 - **[2023.12.13]** Our gpt-4v-distribution-shift paper has been accessible at https://arxiv.org/pdf/2312.07424.pdf. 
 
 
-## Requirements
-
+## 🐙 Requirements
 
 1. Clone this repository and navigate to the project directory
 
@@ -62,7 +61,7 @@ pip install -e .
 
 
 
-## Prepare Dataset
+## ⚠️ Prepare Dataset ⚠️
 
 ### Download the datasets
 
@@ -109,7 +108,7 @@ Example for PACS:
 
 
 
-## Evaluation Pipeline
+## :hammer_and_wrench: Evaluation Pipeline
 
 
 
@@ -163,7 +162,7 @@ To review the detailed outcomes of each model, refer to the respective `results_
 
 
 
-## Evaluation
+## 🤖 Evaluation
 
 
 
@@ -326,7 +325,7 @@ echo "GPT-4V evaluation pipeline completed."
 After the above bash job is completed, you would find the results_model-name_failure.json and results_model-name_random.json for each of clip, llava, gpt-4v.
 
 
-## Reproduce Table 1 and 2 in the paper
+## 😈 Reproduce Table 1 and 2 in the paper
 
 Recognizing the continuous evolution of multimodal foundation models, such as [Gemini](https://deepmind.google/technologies/gemini/#introduction), we make our random test cases public in [huggingface repository](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift/tree/main), as a benchmark for evaluating and tracking the adaptability of SOTA foundation models to distribution shifts.
 
@@ -359,7 +358,7 @@ python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scena
 echo "GPT-4V evaluation pipeline completed."
 ```
 
-## Citation
+## :white_check_mark: Citation
 
 If you find our work useful in your research, please consider citing:
 
