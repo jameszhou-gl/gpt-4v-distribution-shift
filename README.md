@@ -184,7 +184,7 @@ Replace `<path_to_clip_results>` with the directory path where the CLIP results 
 ### Evaluating with gpt-4-vision-preview
 
 ```bash
-export OPENAI_API_KEY="your-openai-api"
+export OPENAI_API_KEY="your-openai-api-key"
 python evaluation/eval_gpt-4v.py --num_sample 1
 ```
 
@@ -276,27 +276,27 @@ python evaluation/prepare_gpt4v_evaluation.py --num_rand $NUM_RAND --num_failure
 # Run GPT-4V evaluation for different scenarios
 # Scenario 1: Failure cases, Part 1
 echo "Running GPT-4V evaluation for Failure Scenario 1..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name failure_1 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name failure_1 --openai_api_key your-openai-api-key
 
 # Scenario 2: Failure cases, Part 2
 echo "Running GPT-4V evaluation for Failure Scenario 2..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name failure_2 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name failure_2 --openai_api_key your-openai-api-key
 
 # Scenario 1: Random cases, Part 1
 echo "Running GPT-4V evaluation for Random Scenario 1..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_1 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_1 --openai_api_key your-openai-api-key
 
 # Scenario 2: Random cases, Part 2
 echo "Running GPT-4V evaluation for Random Scenario 2..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_2 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_2 --openai_api_key your-openai-api-key
 
 # Scenario 3: Random cases, Part 3
 echo "Running GPT-4V evaluation for Random Scenario 3..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_3 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_3 --openai_api_key your-openai-api-key
 
 # Scenario 4: Random cases, Part 4
 echo "Running GPT-4V evaluation for Random Scenario 4..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_4 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_4 --openai_api_key your-openai-api-key
 
 echo "GPT-4V evaluation pipeline completed."
 
@@ -324,15 +324,15 @@ python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scena
 
 # Scenario 2: Random cases, Part 2
 echo "Running GPT-4V evaluation for Random Scenario 2..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_2 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_2 --openai_api_key your-openai-api-key
 
 # Scenario 3: Random cases, Part 3
 echo "Running GPT-4V evaluation for Random Scenario 3..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_3 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_3 --openai_api_key your-openai-api-key
 
 # Scenario 4: Random cases, Part 4
 echo "Running GPT-4V evaluation for Random Scenario 4..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_4 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_4 --openai_api_key your-openai-api-key
 
 echo "GPT-4V evaluation pipeline completed."
 ```
