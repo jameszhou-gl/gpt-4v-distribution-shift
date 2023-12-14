@@ -250,7 +250,7 @@ Finally, evaluate the GPT-4V model based on two criteria:
 
 ​       randomly choose NUM_RAND samples in from random samples in CLIP
 
-Note that we split the total 1800 cases into four parts due to current rate limit as 100 RPD in OpenAI API.
+Note that we split the total 1800 cases into four parts due to current rate limit as [500 RPD in OpenAI API](https://platform.openai.com/docs/guides/rate-limits/usage-tiers?context=tier-one).
 
 We run `bash evaluation/gpt-4v_eval_pipeline.sh` using [gpt-4v_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/gpt-4v_eval_pipeline.sh):
 
