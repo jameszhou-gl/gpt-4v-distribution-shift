@@ -306,7 +306,7 @@ After the above bash job is completed, you would find the results_model-name_fai
 
 ## Reproduce Table 1 and 2 in the paper
 
-Recognizing the continuous evolution of multimodal foundation models, such as [Gemini](https://deepmind.google/technologies/gemini/#introduction), we make our random test cases public in [huggingface repository](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift), as a benchmark for evaluating and tracking the adaptability of SOTA foundation models to distribution shifts.
+Recognizing the continuous evolution of multimodal foundation models, such as [Gemini](https://deepmind.google/technologies/gemini/#introduction), we make our random test cases public in [huggingface repository](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift/tree/main), as a benchmark for evaluating and tracking the adaptability of SOTA foundation models to distribution shifts.
 
 Here, we present how to reproduce the gpt-4v on the specific random sample sets.
 ```bash
@@ -324,15 +324,15 @@ python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scena
 
 # Scenario 2: Random cases, Part 2
 echo "Running GPT-4V evaluation for Random Scenario 2..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_2 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_2 --openai_api_key your-openai-api-key
 
 # Scenario 3: Random cases, Part 3
 echo "Running GPT-4V evaluation for Random Scenario 3..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_3 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_3 --openai_api_key your-openai-api-key
 
 # Scenario 4: Random cases, Part 4
 echo "Running GPT-4V evaluation for Random Scenario 4..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_4 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_4 --openai_api_key your-openai-api-key
 
 echo "GPT-4V evaluation pipeline completed."
 ```
