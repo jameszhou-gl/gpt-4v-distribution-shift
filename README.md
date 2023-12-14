@@ -3,6 +3,20 @@
 ![Static Badge](https://img.shields.io/badge/Model-GPT--4v-green)
 ![Static Badge](https://img.shields.io/badge/Model-LLaVA-green)
 ![Static Badge](https://img.shields.io/badge/Model-CLIP-green)
+![Static Badge](https://img.shields.io/badge/Dataset-VLCS-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-OfficeHome-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-DomainNet-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-camelyon17_v1.0-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-fmow_v1.1-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-terra_incognita-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-iwildcam_v2.0-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-HAM10000-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-NIH_Chest_X_ray_14-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-drugood_assay-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-drugood_scaffold-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-Xray(COVIDE)-blue)
+
+
 
 Code for the Paper "[How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary
 Investigation](https://arxiv.org/pdf/2312.07424.pdf)".
