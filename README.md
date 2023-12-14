@@ -214,7 +214,7 @@ Use [clip_llava_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distrib
 
 # ! Specify the dataset and the number of samples
 dataset="PACS"
-num_sample=5 # 20 in default
+num_sample=80 # 20 in default
 
 # Get the current timestamp
 current_time=$(date +"%Y-%m-%d-%H_%M_%S")
@@ -222,6 +222,12 @@ current_time=$(date +"%Y-%m-%d-%H_%M_%S")
 # Define the base output directory
 base_output_dir="./exp_output"
 timestamped_output_dir="${base_output_dir}/${current_time}"
+
+# Create the timestamped output directory
+mkdir -p "$timestamped_output_dir"
+
+# Copy the bash script to the new output directory
+cp ./evaluation/clip_llava_eval_pipeline.sh "$timestamped_output_dir"
 
 # Run the CLIP evaluation script with the new output directory
 python ./evaluation/eval_clip.py --dataset $dataset --output_dir "$timestamped_output_dir" --num_sample $num_sample --save_samples
@@ -257,8 +263,11 @@ Use [gpt-4v_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distributio
 # Directory where the output of the CLIP and LLaVA models is stored
 CONTINUE_DIR="exp_output/2023-11-22-19_18_50"
 # Number of random and failure cases to prepare for GPT-4V evaluation
-NUM_RAND=20 # 180 in default
-NUM_FAILURE=20 # 180 in default
+NUM_RAND=1800 # 1800 in default
+NUM_FAILURE=180 # 180 in default
+
+# Copy the bash script to the new output directory
+cp evaluation/gpt-4v_eval_pipeline.sh "$CONTINUE_DIR"
 
 # Prepare the GPT-4V evaluation dataset
 echo "Preparing GPT-4V evaluation dataset..."
@@ -273,25 +282,59 @@ python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scena
 echo "Running GPT-4V evaluation for Failure Scenario 2..."
 python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name failure_2 --openai_api_key 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
 
-# Scenario 3: Random cases, Part 1
+# Scenario 1: Random cases, Part 1
 echo "Running GPT-4V evaluation for Random Scenario 1..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_1 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_1 --openai_api_key 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
 
-# Scenario 4: Random cases, Part 2
+# Scenario 2: Random cases, Part 2
 echo "Running GPT-4V evaluation for Random Scenario 2..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_2 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_2 --openai_api_key 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
+
+# Scenario 3: Random cases, Part 3
+echo "Running GPT-4V evaluation for Random Scenario 3..."
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_3 --openai_api_key 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
+
+# Scenario 4: Random cases, Part 4
+echo "Running GPT-4V evaluation for Random Scenario 4..."
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_4 --openai_api_key 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
 
 echo "GPT-4V evaluation pipeline completed."
 
 ```
-
-The result directory can be found at [the repository](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/tree/master/exp_output/2023-11-22-19_18_50)
-
-You would find the results_model-name_failure.json and results_model-name_random.json for each of clip, llava, gpt-4v.
+After the above bash job is completed, you would find the results_model-name_failure.json and results_model-name_random.json for each of clip, llava, gpt-4v.
 
 
+## Reproduce Table 1 and 2 in the paper
 
-![](https://p.ipic.vip/i454ez.png)
+Recognizing the continuous evolution of multimodal foundation models, such as [Gemini](https://deepmind.google/technologies/gemini/#introduction), we make our random test cases public in [huggingface repository](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift), as a benchmark for evaluating and tracking the adaptability of SOTA foundation models to distribution shifts.
+
+```bash
+#!/bin/bash
+
+# This script runs the GPT-4V evaluation pipeline. It prepares the evaluation,
+# then runs the GPT-4V scenario runner with different scenarios and API keys.
+# ! Specify
+# Directory where the output of the CLIP and LLaVA models is stored
+CONTINUE_DIR="your-path-for-hugginface-gpt-4v-distribution-shift-PACS"
+
+# Scenario 1: Random cases, Part 1
+echo "Running GPT-4V evaluation for Random Scenario 1..."
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_1 --openai_api_key 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
+
+# Scenario 2: Random cases, Part 2
+echo "Running GPT-4V evaluation for Random Scenario 2..."
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_2 --openai_api_key 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
+
+# Scenario 3: Random cases, Part 3
+echo "Running GPT-4V evaluation for Random Scenario 3..."
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_3 --openai_api_key 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
+
+# Scenario 4: Random cases, Part 4
+echo "Running GPT-4V evaluation for Random Scenario 4..."
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_4 --openai_api_key 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
+
+echo "GPT-4V evaluation pipeline completed."
+```
 
 ## Citation
 
