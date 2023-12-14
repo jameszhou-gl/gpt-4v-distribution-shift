@@ -167,7 +167,7 @@ def main(args):
                 continue
             unified_output = {}
             image_path = os.path.join(
-                args.data_dir, each_dataset, item['image'])
+                args.continue_dir, item['image'])
             response = get_gpt_response(
                 image_path=image_path, prompt=prompt, api_key=api_key).json()
             if 'error' in response:
@@ -225,7 +225,7 @@ if __name__ == '__main__':
     parser.add_argument('--model_name', type=str,
                         choices=['gpt-4-vision-preview'], default="gpt-4-vision-preview")
     parser.add_argument('--continue_dir', type=str, default=None,
-                        help="evaluate llava on the same sample sets with CLIP, i.e., exp_output/2023-11-18-19_56_06")
+                        help="evaluate gpt on the same sample sets with CLIP, i.e., exp_output/2023-11-18-19_56_06")
     parser.add_argument('--save_samples', action='store_true',
                         help='whether save the sample sets into output_dir')
     parser.add_argument('--openai_api_key', type=str, required=True)
