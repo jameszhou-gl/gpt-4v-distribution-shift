@@ -342,11 +342,11 @@ If you find our work useful in your research, please consider citing:
 
 ```tex
 @misc{han2023does,
-title={How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary Investigation},
-author={Zhongyi Han and Guanglin Zhou and Rundong He and Jindong Wang and Xing Xie and Tailin Wu and Yilong Yin and Salman Khan and Lina Yao and Tongliang Liu and Kun Zhang},
-year={2023},
-eprint={2312.07424},
-archivePrefix={arXiv},
-primaryClass={cs.LG}
+      title={How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary Investigation}, 
+      author={Zhongyi Han and Guanglin Zhou and Rundong He and Jindong Wang and Tailin Wu and Yilong Yin and Salman Khan and Lina Yao and Tongliang Liu and Kun Zhang},
+      year={2023},
+      eprint={2312.07424},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
 }
 ```
