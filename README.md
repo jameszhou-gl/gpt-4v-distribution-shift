@@ -308,6 +308,7 @@ After the above bash job is completed, you would find the results_model-name_fai
 
 Recognizing the continuous evolution of multimodal foundation models, such as [Gemini](https://deepmind.google/technologies/gemini/#introduction), we make our random test cases public in [huggingface repository](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift), as a benchmark for evaluating and tracking the adaptability of SOTA foundation models to distribution shifts.
 
+Here, we present how to reproduce the gpt-4v on the specific random sample sets.
 ```bash
 #!/bin/bash
 
@@ -319,7 +320,7 @@ CONTINUE_DIR="your-path-for-hugginface-gpt-4v-distribution-shift-PACS"
 
 # Scenario 1: Random cases, Part 1
 echo "Running GPT-4V evaluation for Random Scenario 1..."
-python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_1 --openai_api_key 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
+python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scenario_name random_1 --openai_api_key your-openai-api-key
 
 # Scenario 2: Random cases, Part 2
 echo "Running GPT-4V evaluation for Random Scenario 2..."
