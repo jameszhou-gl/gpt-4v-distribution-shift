@@ -25,7 +25,7 @@ Investigation](https://arxiv.org/pdf/2312.07424.pdf)".
 ## 💥 News 💥
 
 - **[2023.12.13]** Thrilled to see that our gpt-4v-distribution-shift paper has been featured by [AK](https://huggingface.co/akhaliq) on [Daily Papers](https://huggingface.co/papers?date=2023-12-13) page. 
-
+- **[2023.12.13]** Our gpt-4v-distribution-shift paper has been accessible at https://arxiv.org/pdf/2312.07424.pdf. 
 
 
 ## Requirements
