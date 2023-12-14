@@ -1,11 +1,20 @@
 # How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary Investigation
+![Static Badge](https://img.shields.io/badge/Task-Distribution--Shift-blue)
+![Static Badge](https://img.shields.io/badge/Model-GPT--4v-green)
+![Static Badge](https://img.shields.io/badge/Model-LLaVA-green)
+![Static Badge](https://img.shields.io/badge/Model-CLIP-green)
 
-[TOC]
+Code for the Paper "[How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary
+Investigation](https://arxiv.org/pdf/2312.07424.pdf)".
+
+
+## 💥 News 💥
+
+- **[2023.12.13]** Thrilled to see that our gpt-4v-distribution-shift paper has been featured by [AK](https://huggingface.co/akhaliq) on [Daily Papers](https://huggingface.co/papers?date=2023-12-13) page. 
 
 
 
-## Install
-
+## Requirements
 
 
 1. Clone this repository and navigate to the project directory
@@ -236,7 +245,6 @@ python ./evaluation/eval_clip.py --dataset $dataset --output_dir "$timestamped_o
 CUDA_VISIBLE_DEVICES=0,1 python ./evaluation/eval_llava.py --dataset $dataset --continue_dir="$timestamped_output_dir"
 ```
 
-Ï
 
 #### Step 2: Evaluate the GPT-4V Model in Two Scenarios
 
