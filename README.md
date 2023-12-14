@@ -1,12 +1,34 @@
 # How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary Investigation
+![Static Badge](https://img.shields.io/badge/Task-Distribution--Shift-blue)
+![Static Badge](https://img.shields.io/badge/Model-GPT--4v-green)
+![Static Badge](https://img.shields.io/badge/Model-LLaVA-green)
+![Static Badge](https://img.shields.io/badge/Model-CLIP-green)
+![Static Badge](https://img.shields.io/badge/Dataset-VLCS-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-OfficeHome-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-DomainNet-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-camelyon17_v1.0-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-fmow_v1.1-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-terra_incognita-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-iwildcam_v2.0-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-HAM10000-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-NIH_Chest_X_ray_14-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-drugood_assay-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-drugood_scaffold-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-Xray(COVID)-blue)
 
-[TOC]
 
 
+Code for the Paper "[How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary
+Investigation](https://arxiv.org/pdf/2312.07424.pdf)".
 
-## Install
+
+## 💥 News 💥
+
+- **[2023.12.13]** Thrilled to see that our gpt-4v-distribution-shift paper has been featured by [AK](https://huggingface.co/akhaliq) on [Daily Papers](https://huggingface.co/papers?date=2023-12-13) page. 
+- **[2023.12.13]** Our gpt-4v-distribution-shift paper has been accessible at https://arxiv.org/pdf/2312.07424.pdf. 
 
 
+## 🐙 Requirements
 
 1. Clone this repository and navigate to the project directory
 
@@ -39,7 +61,7 @@ pip install -e .
 
 
 
-## Prepare Dataset
+## ⚠️ Prepare Dataset ⚠️
 
 ### Download the datasets
 
@@ -86,7 +108,7 @@ Example for PACS:
 
 
 
-## Evaluation Pipeline
+## :hammer_and_wrench: Evaluation Pipeline
 
 
 
@@ -140,7 +162,7 @@ To review the detailed outcomes of each model, refer to the respective `results_
 
 
 
-## Evaluation
+## 🤖 Evaluation
 
 
 
@@ -236,7 +258,6 @@ python ./evaluation/eval_clip.py --dataset $dataset --output_dir "$timestamped_o
 CUDA_VISIBLE_DEVICES=0,1 python ./evaluation/eval_llava.py --dataset $dataset --continue_dir="$timestamped_output_dir"
 ```
 
-Ï
 
 #### Step 2: Evaluate the GPT-4V Model in Two Scenarios
 
@@ -244,15 +265,15 @@ Finally, evaluate the GPT-4V model based on two criteria:
 
 1. **Failure Cases in CLIP**: Evaluate GPT-4V on the cases where the CLIP model failed.
 
-   randomly choose NUM_RAND failure samples in CLIP
+   randomly choose NUM_FAILURE failure samples in CLIP
 
 2. **Random Samples**: Evaluate GPT-4V on random samples saved in `exp_output/2023-11-22-19_18_50`.
 
-​       randomly choose NUM_FAILURE samples in from random samples in CLIP
+​       randomly choose NUM_RAND samples in from random samples in CLIP
 
-We run `bash evaluation/gpt-4v_eval_pipeline.sh`
+Note that we split the total 1800 cases into four parts due to current rate limit as [500 RPD in OpenAI API](https://platform.openai.com/docs/guides/rate-limits/usage-tiers?context=tier-one).
 
-Use [gpt-4v_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/gpt-4v_eval_pipeline.sh):
+We run `bash evaluation/gpt-4v_eval_pipeline.sh` using [gpt-4v_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/gpt-4v_eval_pipeline.sh):
 
 ```bash
 #!/bin/bash
@@ -304,9 +325,9 @@ echo "GPT-4V evaluation pipeline completed."
 After the above bash job is completed, you would find the results_model-name_failure.json and results_model-name_random.json for each of clip, llava, gpt-4v.
 
 
-## Reproduce Table 1 and 2 in the paper
+## 😈 Reproduce Table 1 and 2 in the paper
 
-Recognizing the continuous evolution of multimodal foundation models, such as [Gemini](https://deepmind.google/technologies/gemini/#introduction), we make our random test cases public in [huggingface repository](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift), as a benchmark for evaluating and tracking the adaptability of SOTA foundation models to distribution shifts.
+Recognizing the continuous evolution of multimodal foundation models, such as [Gemini](https://deepmind.google/technologies/gemini/#introduction), we make our random test cases public in [huggingface repository](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift/tree/main), as a benchmark for evaluating and tracking the adaptability of SOTA foundation models to distribution shifts.
 
 Here, we present how to reproduce the gpt-4v on the specific random sample sets.
 ```bash
@@ -337,7 +358,7 @@ python evaluation/gpt-4v_scenario_runner.py --continue_dir $CONTINUE_DIR --scena
 echo "GPT-4V evaluation pipeline completed."
 ```
 
-## Citation
+## :white_check_mark: Citation
 
 If you find our work useful in your research, please consider citing:
 
