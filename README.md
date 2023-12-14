@@ -14,7 +14,7 @@
 ![Static Badge](https://img.shields.io/badge/Dataset-NIH_Chest_X_ray_14-blue)
 ![Static Badge](https://img.shields.io/badge/Dataset-drugood_assay-blue)
 ![Static Badge](https://img.shields.io/badge/Dataset-drugood_scaffold-blue)
-![Static Badge](https://img.shields.io/badge/Dataset-Xray(COVIDE)-blue)
+![Static Badge](https://img.shields.io/badge/Dataset-Xray(COVID)-blue)
 
 
 
