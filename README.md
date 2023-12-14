@@ -19,7 +19,7 @@
 
 
 Code for the Paper "[How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary
-Investigation](https://arxiv.org/pdf/2312.07424.pdf)".
+Investigation](https://arxiv.org/abs/2312.07424#:~:text=GPT%2D4V(ision)%20acts,data%20distributions%20remains%20largely%20underexplored.)".
 
 
 ## 💥 News 💥
