@@ -2,7 +2,7 @@
 
 # ! Specify the dataset and the number of samples
 dataset="PACS"
-num_sample=200 # 20 in default
+num_sample=80 # 20 in default
 
 # Get the current timestamp
 current_time=$(date +"%Y-%m-%d-%H_%M_%S")
