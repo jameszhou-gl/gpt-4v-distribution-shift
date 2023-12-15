@@ -26,7 +26,7 @@ Investigation](https://arxiv.org/abs/2312.07424)".
 
 
 ## 💥 News 💥
-
+- **[2023.12.14]** An extensive collection of benchmark test cases, totaling 23.4k across 13 datasets, is now public [🤗 Hugging Face](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift/tree/main). 
 - **[2023.12.13]** Thrilled to see that our gpt-4v-distribution-shift paper has been featured by [AK](https://huggingface.co/akhaliq) on [Daily Papers](https://huggingface.co/papers?date=2023-12-13) page. 
 - **[2023.12.13]** Our gpt-4v-distribution-shift paper has been accessible at https://arxiv.org/pdf/2312.07424.pdf. 
 
