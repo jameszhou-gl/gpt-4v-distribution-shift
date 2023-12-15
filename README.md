@@ -1,8 +1,11 @@
 # How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary Investigation
 ![Static Badge](https://img.shields.io/badge/Task-Distribution--Shift-blue)
+[![hf_space](https://img.shields.io/badge/🤗-Dataset%20Spaces-blue.svg)](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift) 
+[![arXiv](https://img.shields.io/badge/Arxiv-2312.02896-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2312.07424) 
 ![Static Badge](https://img.shields.io/badge/Model-GPT--4v-green)
 ![Static Badge](https://img.shields.io/badge/Model-LLaVA-green)
 ![Static Badge](https://img.shields.io/badge/Model-CLIP-green)
+
 ![Static Badge](https://img.shields.io/badge/Dataset-VLCS-blue)
 ![Static Badge](https://img.shields.io/badge/Dataset-OfficeHome-blue)
 ![Static Badge](https://img.shields.io/badge/Dataset-DomainNet-blue)
