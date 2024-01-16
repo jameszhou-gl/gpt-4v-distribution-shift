@@ -1,8 +1,11 @@
-# How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary Investigation
+# [How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary Investigation](https://arxiv.org/abs/2312.07424)
 ![Static Badge](https://img.shields.io/badge/Task-Distribution--Shift-blue)
+[![hf_space](https://img.shields.io/badge/🤗-Dataset%20Spaces-blue.svg)](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift) 
+[![arXiv](https://img.shields.io/badge/Arxiv-2312.07424-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2312.07424) 
 ![Static Badge](https://img.shields.io/badge/Model-GPT--4v-green)
 ![Static Badge](https://img.shields.io/badge/Model-LLaVA-green)
 ![Static Badge](https://img.shields.io/badge/Model-CLIP-green)
+
 ![Static Badge](https://img.shields.io/badge/Dataset-VLCS-blue)
 ![Static Badge](https://img.shields.io/badge/Dataset-OfficeHome-blue)
 ![Static Badge](https://img.shields.io/badge/Dataset-DomainNet-blue)
@@ -19,12 +22,13 @@
 
 
 Code for the Paper "[How Well Does GPT-4V(ision) Adapt to Distribution Shifts? A Preliminary
-Investigation](https://arxiv.org/pdf/2312.07424.pdf)".
+Investigation](https://arxiv.org/abs/2312.07424)".
 
 
 ## 💥 News 💥
 
 - **[2024.01.16]** Our code repository supports the evaluation for [Gemini Pro Vision](https://ai.google.dev/models/gemini).
+- **[2023.12.14]** An extensive collection of benchmark test cases, totaling 23.4k across 13 datasets, is now public [🤗 Hugging Face](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift/tree/main). 
 - **[2023.12.13]** Thrilled to see that our gpt-4v-distribution-shift paper has been featured by [AK](https://huggingface.co/akhaliq) on [Daily Papers](https://huggingface.co/papers?date=2023-12-13) page. 
 - **[2023.12.13]** Our gpt-4v-distribution-shift paper has been accessible at https://arxiv.org/pdf/2312.07424.pdf. 
 
