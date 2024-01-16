@@ -78,3 +78,4 @@ typing_extensions==4.8.0
 tzdata==2023.3
 urllib3==2.1.0
 wilds==2.0.0
+google-generativeai==0.3.2
