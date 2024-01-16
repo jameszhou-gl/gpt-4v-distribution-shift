@@ -24,6 +24,7 @@ Investigation](https://arxiv.org/pdf/2312.07424.pdf)".
 
 ## 💥 News 💥
 
+- **[2024.01.16]** Our code repository supports the evaluation for [Gemini Pro Vision](https://ai.google.dev/models/gemini).
 - **[2023.12.13]** Thrilled to see that our gpt-4v-distribution-shift paper has been featured by [AK](https://huggingface.co/akhaliq) on [Daily Papers](https://huggingface.co/papers?date=2023-12-13) page. 
 - **[2023.12.13]** Our gpt-4v-distribution-shift paper has been accessible at https://arxiv.org/pdf/2312.07424.pdf. 
 
@@ -324,6 +325,16 @@ echo "GPT-4V evaluation pipeline completed."
 ```
 After the above bash job is completed, you would find the results_model-name_failure.json and results_model-name_random.json for each of clip, llava, gpt-4v.
 
+#### Step 3: Evaluate the Gemini Pro Vision Model in Two Scenarios
+
+We evaluate the Gemini model based on two criteria:
+
+1. **Failure Cases in CLIP**: Evaluate Gemini Pro Vision on the cases where the CLIP model failed.
+
+2. **Random Samples**: Evaluate Gemini Pro Vision on random samples saved in `exp_output/2023-11-22-19_18_50`.
+
+
+We run `bash evaluation/gpt-4v_eval_pipeline.sh` using [gpt-4v_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/gpt-4v_eval_pipeline.sh):
 
 ## 😈 Reproduce Table 1 and 2 in the paper
 
