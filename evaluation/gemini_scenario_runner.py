@@ -74,7 +74,16 @@ if __name__ == '__main__':
     subprocess.run(eval_gemini_single)
 
     # Combine and analyze results for the final scenarios
-    if args.scenario_name in ['random_4']:
+    if args.scenario_name == 'random_2':
+        scenario_type = 'random'
+        file_paths = [
+            f'{args.continue_dir}/{scenario_type}_1/{dataset}/unified_output_{args.model_name}.jsonl',
+            f'{args.continue_dir}/{scenario_type}_2/{dataset}/unified_output_{args.model_name}.jsonl'
+        ]
+        combined_data = combine_jsonl_files(file_paths)
+        analyze_combined_result(
+            combined_data, scenario_type, args.continue_dir, args.model_name)
+    elif args.scenario_name == 'random_4':
         scenario_type = 'random'
         file_paths = [
             f'{args.continue_dir}/{scenario_type}_1/{dataset}/unified_output_{args.model_name}.jsonl',
@@ -85,7 +94,7 @@ if __name__ == '__main__':
         combined_data = combine_jsonl_files(file_paths)
         analyze_combined_result(
             combined_data, scenario_type, args.continue_dir, args.model_name)
-    elif args.scenario_name in ['failure_2']:
+    elif args.scenario_name == 'failure_2':
         scenario_type = 'failure'
         file_paths = [
             f'{args.continue_dir}/{scenario_type}_1/{dataset}/unified_output_{args.model_name}.jsonl',
