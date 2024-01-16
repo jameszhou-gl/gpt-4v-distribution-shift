@@ -333,12 +333,12 @@ After the above bash job is completed, you would find the results_model-name_fai
 
 We evaluate the Gemini model based on two criteria:
 
-1. **Failure Cases in CLIP**: Evaluate Gemini Pro Vision on the cases where the CLIP model failed.
+1. **Failure Cases in CLIP**: Evaluate Gemini Pro Vision on the cases where the CLIP model failed, i.e., saved in `./exp_output/2023-11-22-22_21_35`.
 
-2. **Random Samples**: Evaluate Gemini Pro Vision on random samples saved in `exp_output/2023-11-22-19_18_50`.
+2. **Random Samples**: Evaluate Gemini Pro Vision on random samples, i.e., saved in `./exp_output/2023-11-22-19_18_50`.
 
 
-We run `bash evaluation/gpt-4v_eval_pipeline.sh` using [gpt-4v_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/gpt-4v_eval_pipeline.sh):
+We run `bash evaluation/gemini_eval_pipeline.sh` using [gemini_eval_pipeline.sh](https://github.com/jameszhou-gl/gpt-4v-distribution-shift/blob/master/evaluation/gemini_eval_pipeline.sh):
 
 ## 😈 Reproduce Table 1 and 2 in the paper
 

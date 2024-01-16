@@ -4,8 +4,8 @@
 # Firstly in your terminal: export GOOGLE_API_KEY='your-google-api-key'
 # ! Specify
 # Directory where the output of the CLIP and LLaVA models is stored
-FAILURE_CONTINUE_DIR="/home/guanglinzhou/code/cgm/gpt-4v-distribution-shift/exp_output/2023-11-22-22_21_35"
-RANDOM_CONTINUE_DIR="/home/guanglinzhou/code/cgm/gpt-4v-distribution-shift/exp_output/2023-12-07-06_51_36"
+FAILURE_CONTINUE_DIR="./exp_output/2023-11-22-22_21_35"
+RANDOM_CONTINUE_DIR="./exp_output/2023-12-07-06_51_36"
 
 # Copy the bash script to the new output directory
 cp evaluation/gemini_eval_pipeline.sh "$FAILURE_CONTINUE_DIR"
