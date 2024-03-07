@@ -27,6 +27,7 @@ Investigation](https://arxiv.org/abs/2312.07424)".
 
 ## 💥 News 💥
 
+- **[2024.01.16]** Our paper is accepted by [ICLR 2024 Workshop on Mathematical and Empirical Understanding of Foundation Models](https://openreview.net/forum?id=J8V4EwZkez)
 - **[2024.01.16]** Our code repository supports the evaluation for [Gemini Pro Vision](https://ai.google.dev/models/gemini).
 - **[2023.12.14]** An extensive collection of benchmark test cases, totaling 23.4k across 13 datasets, is now public [🤗 Hugging Face](https://huggingface.co/datasets/jameszhou-gl/gpt-4v-distribution-shift/tree/main). 
 - **[2023.12.13]** Thrilled to see that our gpt-4v-distribution-shift paper has been featured by [AK](https://huggingface.co/akhaliq) on [Daily Papers](https://huggingface.co/papers?date=2023-12-13) page. 
