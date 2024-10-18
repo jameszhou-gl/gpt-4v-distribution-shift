@@ -1,6 +1,6 @@
 2023-11-22 19:41:27,363 - Saving in exp_output/2023-11-22-19_18_50/failure_1/PACS
 2023-11-22 19:41:27,364 - Run an experiment continuing from an existing directory
-2023-11-22 19:41:27,364 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset=['PACS'], output_dir='exp_output/2023-11-22-19_18_50/failure_1/PACS', num_sample=20, model_name='gpt-4-vision-preview', continue_dir='exp_output/2023-11-22-19_18_50/failure_1/PACS', save_samples=False, openai_api_key='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')
+2023-11-22 19:41:27,364 - Namespace(data_dir='/home/guanglinzhou/scratch/gpt-4v-distribution-shift', dataset=['PACS'], output_dir='exp_output/2023-11-22-19_18_50/failure_1/PACS', num_sample=20, model_name='gpt-4-vision-preview', continue_dir='exp_output/2023-11-22-19_18_50/failure_1/PACS', save_samples=False, openai_api_key='your-openai-api-key')
 2023-11-22 19:41:27,364 - Load an existing unified_input_PACS.json
 2023-11-22 19:41:31,039 - answer by gpt-4v:
 ---BEGIN FORMAT TEMPLATE---
